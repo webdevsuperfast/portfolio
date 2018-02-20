@@ -1,0 +1,15 @@
+{
+  "name": "webdevsuperfast",
+  "version": "1.0.0",
+  "description": "My personal website hosted on GitHub",
+  "main": "gulpfile.js",
+  "repository": "git@github.com:webdevsuperfast/webdevsuperfast.github.io.git",
+  "author": "Rotsen Mark Acob <acob.rotsen@hotmail.com>",
+  "license": "GPL3",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "now-ui-kit": "^1.1.0"
+  }
+}

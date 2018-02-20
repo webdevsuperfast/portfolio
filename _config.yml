@@ -7,3 +7,10 @@ github_username:  webdevsuperfast
 # Build settings
 markdown: kramdown
 theme: minima
+
+sass:
+  load_paths:
+    - _sass
+    - node_modules
+
+exclude: []

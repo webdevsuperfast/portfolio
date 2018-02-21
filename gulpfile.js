@@ -94,7 +94,13 @@ gulp.task('clean', function(cb) {
 });
 
 // Default task
-gulp.task('default', ['browser-sync', 'clean', 'styles', 'lint', 'scripts', 'watch']);
+gulp.task('default', function(){
+    runSequence(
+        'browser-sync',
+        ['styles', 'lint', 'scripts'],
+        'watch'
+    );
+});
 
 // Watch
 gulp.task('watch', function() {

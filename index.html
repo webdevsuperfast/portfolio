@@ -122,12 +122,11 @@ title: Rotsen Acob | Web Developer
             <div class="row">
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="collections row text-center">
-                        <div class="col-md-6 mix wordpress">
-                            WordPress
-                        </div>
-                        <div class="col-md-6 mix psd">
-                            PSD
-                        </div>
+                        {% for portfolio in site.portfolio %}
+                            <div class="col-md-6 mix {{portfolio.categories | join: ' '}}">
+                                <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

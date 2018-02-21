@@ -41,11 +41,14 @@ gulp.task('browser-sync', ['styles', 'scripts', 'jekyll-build'], function() {
 
 // CSS
 gulp.task('styles', function(){
+    var cssStream = gulp.src('node_modules/magnific-popup/dist/magnific-popup.css')
+        .pipe(concat('magnific-popup.css'));
+
     var sassStream = gulp.src('assets/scss/style.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(concat('app.scss'))
+        .pipe(concat('app.scss'));
     
-    var mergeStream = merge(sassStream)
+    var mergeStream = merge(sassStream, cssStream)
         .pipe(concat('app.css'))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(cmq())
@@ -73,7 +76,8 @@ gulp.task('scripts', function() {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/popper.js/dist/umd/popper.js',
         'node_modules/now-ui-kit/assets/js/now-ui-kit.js',
-        'node_modules/mixitup/dist/mixitup.js'
+        'node_modules/mixitup/dist/mixitup.js',
+        'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){

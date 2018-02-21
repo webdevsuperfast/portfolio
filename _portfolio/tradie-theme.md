@@ -1,8 +1,8 @@
 ---
 title: Tradie Theme
 client: SuperFastBusiness
-image: '/assets/images/tradie-theme.jpg'
-thumbnail: /assets/images/thumbs/tradie-theme.jpg
+image: /assets/images/tradie-theme.png
+thumbnail: /assets/images/thumbs/tradie-theme.png
 categories:
     - wordpress
     - design

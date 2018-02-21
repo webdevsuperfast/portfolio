@@ -13,5 +13,25 @@
     <script src="{{ '/assets/js/popper.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/now-ui-kit.min.js' | relative_url }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFontConfig = {
+            google: { families: [ 'Montserrat:200,200i,400,400i,700,700i' ] },
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        };
+        var $source = pref.webfont;
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = $source;
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+
+    </script>
 </body>
 </html>

@@ -121,10 +121,12 @@ title: Rotsen Acob | Web Developer
             </div>
             <div class="row">
                 <div class="col-md-10 ml-auto mr-auto">
-                    <div class="collections row text-center">
+                    <div class="collections row text-center gallery">
                         {% for portfolio in site.portfolio %}
                             <div class="col-md-6 mix {{portfolio.categories | join: ' '}}">
-                                <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                                <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-client="{{portfolio.client}}">
+                                    <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                                </a>
                             </div>
                         {% endfor %}
                     </div>

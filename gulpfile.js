@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 // Jekyll
 gulp.task( 'jekyll-build', function(done) {
     browserSync.notify({message: 'Running jekyll build'});
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+    return cp.spawn( jekyll , ['build', '--watch', '--incremental'], {stdio: 'inherit'})
         .on('close', done);
 } );
 

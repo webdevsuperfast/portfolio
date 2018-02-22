@@ -5,3 +5,12 @@
 
 // Now UI Kit
 @import '../../node_modules/now-ui-kit/assets/sass/now-ui-kit';
+
+.nav-tabs {
+    @include media-breakpoint-down(sm) {
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+}

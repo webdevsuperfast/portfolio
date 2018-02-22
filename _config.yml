@@ -20,3 +20,8 @@ exclude: [
 collections:
   portfolio:
     output: false
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed

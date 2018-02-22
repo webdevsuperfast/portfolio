@@ -16695,6 +16695,10 @@ screen and (max-height: 300px) {
         padding-right: 0;
         padding-left: 0;
     }
+    .nav-tabs {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 @media screen and (max-width: 580px) {

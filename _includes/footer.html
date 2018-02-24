@@ -1,0 +1,66 @@
+    <footer class="footer footer-default">
+        <div class="container text-center">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Rotsen Acob. All rights reserved.
+        </div>
+    </footer>
+</div>
+<script src="{{ '/assets/js/jquery.slim.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/popper.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/now-ui-kit.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
+<script>
+    WebFontConfig = {
+        google: { families: [ 'Montserrat:200,200i,400,400i,700,700i' ] },
+        active: function() {
+            sessionStorage.fonts = true;
+        }
+    };
+    var $source = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = $source;
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+
+    (function($){
+        var containerEl = document.querySelector('.collections');
+        var mixer = mixitup(containerEl, {
+            callbacks: {
+                onMixStart: function(state,futureState){
+                }
+            }
+        });
+
+        // Magnific Popup
+        $(document).ready(function(){
+            $('.gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-img-mobile',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                    titleSrc: function(item) {
+                        return item.el.attr('title') + '<small>Client: '+ item.el.data('client') +'</small>';
+                    }
+                }
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

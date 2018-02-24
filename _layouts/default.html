@@ -18,6 +18,23 @@
     <script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
     <script>
+        WebFontConfig = {
+            google: { families: [ 'Montserrat:200,200i,400,400i,700,700i' ] },
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        };
+        var $source = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = $source;
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+
         (function($){
             var containerEl = document.querySelector('.collections');
             var mixer = mixitup(containerEl, {
@@ -48,25 +65,6 @@
                 });
             });
         })(jQuery);
-    </script>
-    <script>
-        WebFontConfig = {
-            google: { families: [ 'Montserrat:200,200i,400,400i,700,700i' ] },
-            active: function() {
-                sessionStorage.fonts = true;
-            }
-        };
-        var $source = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = $source;
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-
     </script>
 </body>
 </html>

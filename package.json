@@ -32,6 +32,7 @@
     "vinyl-paths": "^2.1.0"
   },
   "dependencies": {
+    "Imagehover": "https://github.com/miketricking/bootstrap-image-hover.git",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
     "magnific-popup": "^1.1.0",

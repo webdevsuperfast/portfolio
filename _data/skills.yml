@@ -1,0 +1,27 @@
+- skill: Photoshop
+  value: 80
+
+- skill: WordPress
+  value: 85
+
+- skill: HTML5
+  value: 90
+  class: 
+
+- skill: CSS Frameworks(Bootstrap, Bourbon, Neat)
+  value: 90
+
+- skill: CSS/CSS Preprocessors
+  value: 90
+
+- skill: Task Runners
+  value: 75
+  
+- skill: Version Control(Git/SVN)
+  value: 80
+
+- skill: WooCommerce
+  value: 75
+
+- skill: Operating Systems(MacOS, Linux, Windows)
+  value: 75

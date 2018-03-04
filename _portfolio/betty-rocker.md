@@ -1,6 +1,7 @@
 ---
 title: Betty Rocker
 client: RecommendWP
+url: http://thebettyrocker.com
 image: /assets/images/betty-rocker.jpg
 thumbnail: /assets/images/thumbs/betty-rocker.jpg
 categories:

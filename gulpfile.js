@@ -115,5 +115,5 @@ gulp.task('watch', function() {
     gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
 
     // Watch .html files
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_portfolio/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_portfolio/*', '_includes/*'], ['jekyll-rebuild']);
 });

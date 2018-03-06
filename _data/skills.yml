@@ -1,5 +1,5 @@
 - skill: Photoshop
-  value: 80
+  value: 85
 
 - skill: WordPress
   value: 85
@@ -15,13 +15,13 @@
   value: 90
 
 - skill: Task Runners
-  value: 75
+  value: 80
   
 - skill: Version Control(Git/SVN)
-  value: 80
+  value: 85
 
 - skill: WooCommerce
-  value: 75
+  value: 80
 
 - skill: Operating Systems(MacOS, Linux, Windows)
   value: 75

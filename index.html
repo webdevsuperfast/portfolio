@@ -34,7 +34,7 @@ title: Rotsen Acob | Web Developer
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 ml-auto mr-auto">
+            <div class="col-md-12 ml-auto mr-auto">
                 <div class="nav-align-center">
                     <ul class="nav nav-tabs nav-tabs-primary justify-content-center" role="tablist">
                         <li class="nav-item">
@@ -53,6 +53,11 @@ title: Rotsen Acob | Web Developer
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link filter" data-toggle="tab" data-filter=".woocommerce" role="tablist">
+                                PSD to WooCommerce
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link filter" data-toggle="tab" data-filter=".design" role="tablist">
                                 Web Design
                             </a>
@@ -66,18 +71,16 @@ title: Rotsen Acob | Web Developer
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-10 ml-auto mr-auto">
-                <div class="collections row text-center gallery">
-                    {% for portfolio in site.portfolio %}
-                        <div class="col-md-6 mix {{portfolio.categories | join: ' '}}">
-                            <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-client="{{portfolio.client}}">
-                                <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
-                            </a>
-                        </div>
-                    {% endfor %}
+    </div>
+    <div class="container-fluid collections text-center gallery">
+        <div class="row no-gutters">
+            {% for portfolio in site.portfolio %}
+                <div class="col-sm-3 mix {{portfolio.categories | join: ' '}}">
+                    <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
+                        <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                    </a>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

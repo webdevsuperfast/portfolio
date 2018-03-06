@@ -1,7 +1,7 @@
 ---
 title: RecommendWP
 client: RecommendWP
-url: http://recommendwp.com/
+website: http://recommendwp.com/
 image: /assets/images/recommendwp.png
 thumbnail: /assets/images/thumbs/recommendwp.png
 categories:

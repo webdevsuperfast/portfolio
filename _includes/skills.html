@@ -3,10 +3,10 @@
         <div class="col">
             <h4 class="title">My Skills</h4>
             {% for skill in site.data.skills %}
-                <div class="progress-container progress-primary">
+                <div class="progress-container progress-{% cycle 'default', 'primary' %}">
                     <div class="progress-badge">{{skill.skill}}</div>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-value-now="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.value }}%"><span class="progress-value">{{ skill.value }}</span></div>
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-value-now="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.value }}%"><span class="progress-value">{{ skill.value }}</span></div>
                     </div>
                 </div>
             {% endfor %}

@@ -72,10 +72,10 @@ title: Rotsen Acob | Web Developer
             </div>
         </div>
     </div>
-    <div class="container-fluid collections text-center gallery">
-        <div class="row no-gutters">
+    <div class="container collections text-center gallery">
+        <div class="row">
             {% for portfolio in site.portfolio %}
-                <div class="col-sm-3 mix {{portfolio.categories | join: ' '}}">
+                <div class="col-sm-4 mix {{portfolio.categories | join: ' '}}">
                     <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
                         <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
                     </a>

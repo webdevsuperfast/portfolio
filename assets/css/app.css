@@ -15108,7 +15108,7 @@ Created using IcoMoon - icomoon.io
         padding: 0;
         margin: 7px 0.7rem;
     }
-    .navbar-nav .nav-link.btn:not(.btn-sm):not(.btn-group-sm>.btn) {
+    .navbar-nav .nav-link.btn:not(.btn-sm) {
         margin: 0;
     }
     .navbar-nav .nav-item:not(:last-child) {

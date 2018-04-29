@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "My personal website hosted on GitHub",
   "main": "gulpfile.js",
-  "repository": "git@github.com:webdevsuperfast/webdevsuperfast.github.io.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/webdevsuperfast/webdevsuperfast.github.io.git"
+  },
   "author": "Rotsen Mark Acob <acob.rotsen@hotmail.com>",
-  "license": "GPL3",
+  "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.23.7",
@@ -32,11 +35,19 @@
     "vinyl-paths": "^2.1.0"
   },
   "dependencies": {
-    "Imagehover": "https://github.com/miketricking/bootstrap-image-hover.git",
+    "Imagehover": "git+https://github.com/miketricking/bootstrap-image-hover.git",
     "bootstrap": "^4.1.0",
     "font-awesome": "^4.7.0",
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.2.2",
-    "now-ui-kit": "^1.1.0"
+    "now-ui-kit": "^1.1.0",
+    "npm": "^6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/webdevsuperfast/webdevsuperfast.github.io/issues"
+  },
+  "homepage": "https://github.com/webdevsuperfast/webdevsuperfast.github.io#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

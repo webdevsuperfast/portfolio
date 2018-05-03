@@ -11,7 +11,7 @@
   "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
-    "browser-sync": "^2.23.7",
+    "browser-sync": "^2.24.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "Imagehover": "git+https://github.com/miketricking/bootstrap-image-hover.git",
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.2.2",

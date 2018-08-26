@@ -17,7 +17,7 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-changed": "^3.2.0",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-clean-css": "^3.10.0",
     "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-flatmap": "^1.0.2",
@@ -28,9 +28,9 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1",
     "jquery": "^3.3.1",
-    "jshint": "^2.9.5",
+    "jshint": "^2.9.6",
     "merge-stream": "^1.0.1",
-    "popper.js": "^1.14.3",
+    "popper.js": "^1.14.4",
     "run-sequence": "^2.2.1",
     "vinyl-paths": "^2.1.0"
   },
@@ -41,7 +41,7 @@
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.0",
     "now-ui-kit": "^1.1.0",
-    "npm": "^6.2.0"
+    "npm": "^6.4.0"
   },
   "bugs": {
     "url": "https://github.com/webdevsuperfast/webdevsuperfast.github.io/issues"

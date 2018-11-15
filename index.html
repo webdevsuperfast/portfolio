@@ -8,7 +8,7 @@ title: Rotsen Acob | Web Developer
     <div class="container">
         <div class="content-center">
             <div class="photo-container">
-                <img src="/assets/images/rotsen-acob.jpg" alt="Rotsen Mark Acob">
+                <img class="lazyload" data-src="/assets/images/rotsen-acob.jpg" alt="Rotsen Mark Acob">
             </div>
             <h3 class="title">Rotsen Mark Acob</h3>
             <p class="category">Web Developer</p>
@@ -80,7 +80,7 @@ title: Rotsen Acob | Web Developer
             {% for portfolio in site.portfolio %}
                 <div class="col-sm-4 mix {{portfolio.categories | join: ' '}}">
                     <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
-                        <img class="img-raised" src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                        <img class="img-raised lazyload" data-src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
                     </a>
                 </div>
             {% endfor %}

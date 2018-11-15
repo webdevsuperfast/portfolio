@@ -77,7 +77,8 @@ gulp.task('scripts', function() {
         'node_modules/popper.js/dist/umd/popper.js',
         'node_modules/now-ui-kit/assets/js/now-ui-kit.js',
         'node_modules/mixitup/dist/mixitup.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+        'node_modules/lazysizes/lazysizes.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){

@@ -54,7 +54,7 @@ gulp.task('styles', function(){
         .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
-        .pipe(prettify())
+        .pipe(minifycss())
         .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(notify({ message: 'Styles task complete' }));

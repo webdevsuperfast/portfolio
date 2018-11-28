@@ -14,3 +14,27 @@
         }
     }
 }
+
+// Lazysizes
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 300ms;
+}
+
+/* ## Testimonial
+----------------------------------------------------------------------------- */
+.section-testimonial {
+    background: #eee;
+}
+
+/* ## Contact Form
+----------------------------------------------------------------------------- */
+.section-contact {
+    .send-button {
+        margin-top: 35px;
+    }
+}

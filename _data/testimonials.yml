@@ -1,0 +1,14 @@
+- name: Jim
+  location: Los Altos, United States
+  review: Nice job, knew just what do do. Thanks!
+  score: 5.0
+
+- name: Upwork Client
+  location: 
+  review: Another great job. He's my go-to guy!
+  score: 5.0
+
+- name: Ron
+  location: St. Peters, United States
+  review: Look forward to working with him again in very near future
+  score: 5.0

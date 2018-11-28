@@ -1,0 +1,25 @@
+{% if site.data.testimonials %}
+<div class="section section-testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center ml-auto mr-auto">
+                <h4 class="title">Testimonials</h4>
+                <div class="testimonials row">
+                {% for testimonial in site.data.testimonials %}
+                    <div class="testimonial col-md-4">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">{{ testimonial.review }}</p>
+                            <footer class="blockquote-footer">{{ testimonial.name }}
+                                {%  if testimonial.location %} 
+                                from <cite>{{ testimonial.location }}</cite>
+                                {% endif %}
+                            </footer>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,33 @@
+<div class="section section-contact text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 text-center ml-auto mr-auto">
+                <h4 class="title">Let's Talk</h4>
+                <p class="description">Thanks for taking the time contacting me. Please send me information on your project so I can determine how can I help you.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-8 text-center ml-auto mr-auto">
+                <form action="https://formspree.io/info@rotsenacob.com" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address" name="email">
+                    </div>
+                    <div class="textarea-container">
+                        <textarea name="message" cols="80" rows="4" class="form-control" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="send-button">
+                        <input type="hidden" name="_next" value="{{ '/thank-you/' | relative_url }}">
+                        <input type="hidden" name="_cc" value="acob.rotsen@hotmail.com">
+                        <input type="hidden" name="_subject" value="New submission!" />
+                        <input type="hidden" name="_format" value="plain" />
+                        <input type="text" name="_gotcha" style="display:none" />
+                        <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

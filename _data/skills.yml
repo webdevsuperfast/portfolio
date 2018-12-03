@@ -13,6 +13,9 @@
 - skill: CSS/CSS Preprocessors
   value: 90
 
+- skill: Jekyll
+  value: 80
+  
 - skill: Task Runners
   value: 80
   
@@ -24,3 +27,6 @@
 
 - skill: Operating Systems(MacOS, Linux, Windows)
   value: 75
+
+- skill: ReactJS
+  value: 50

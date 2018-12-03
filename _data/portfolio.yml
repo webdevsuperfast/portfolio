@@ -1,0 +1,208 @@
+- title: Apple Dental
+  client: RecommendWP
+  website: http://appledental.ca/
+  image: apple-dental.jpg
+  thumbnail: apple-dental.jpg
+  category: wordpress
+
+- title: Athletic Performance Nutrition
+  client: RecommendWP
+  website: http://athleticperformancenutrition.com/
+  image: athletic-performance-nutrition.jpg
+  thumbnail: athletic-performance-nutrition.jpg
+  category: wordpress
+
+- title: Atomic Kickboxing
+  client: RecommendWP
+  website: 
+  image: atomic-kickboxing.jpg
+  thumbnail: atomic-kickboxing.jpg
+  category: design
+
+- title: Betty Rocker
+  client: RecommendWP
+  website: http://thebettyrocker.com
+  image: betty-rocker.jpg
+  thumbnail: betty-rocker.jpg
+  category: wordpress
+
+- title: Booming Business
+  client: RecommendWP
+  website: https://boomingbusiness.com
+  image: booming-business.jpg
+  thumbnail: booming-business.jpg
+  category: wordpress
+
+- title: Bootstrap for Genesis
+  client: Rotsen Acob
+  website: http://bootstrap.rotsenacob.com/
+  image: bootstrap-for-genesis.jpg
+  thumbnail: bootstrap-for-genesis.jpg
+  category: 
+    - wordpress 
+    - design
+
+- title: Cleaning Marketer
+  client: SuperFastBusiness
+  website: http://cleaningmarketer.com/
+  image: cleaning-marketer.jpg
+  thumbnail: cleaning-marketer.jpg
+  category: wordpress
+
+- title: Coach Template
+  client: SuperFastBusiness
+  website: http://coach.buildbyninja.com
+  image: coach-template.jpg
+  thumbnail: coach-template.jpg
+  category: wordpress
+
+- title: Compare Surfboards
+  client: SuperFastBusiness
+  website: http://comparesurfboards.com/
+  image: compare-surfboards.jpg
+  thumbnail: compare-surfboards.jpg
+  category: wordpress
+
+- title: Cosmetic and Family Dentistry
+  client: SuperFastBusiness
+  website: http://dental.viewwebsiteexamples.com
+  image: cosmetic-family-dentistry.jpg
+  thumbnail: cosmetic-family-dentistry.jpg
+  category: wordpress
+
+- title: Crunch Analytics
+  client: RecommendWP
+  website: http://crunchanalytics.org/
+  image: crunch-analytics.jpg
+  thumbnail: crunch-analytics.jpg
+  category: 
+    - wordpress 
+    - woocommerce
+
+- title: Deltoro Loan Servicing
+  client: SuperFastBusiness
+  website: http://deltoroloanservicing.com
+  image: deltoro-loan-servicing.jpg
+  thumbnail: deltoro-loan-servicing.jpg
+  category: wordpress
+
+- title: Everglade
+  client: SuperFastBusiness
+  website: http://everglade.viewwebsiteexamples.com
+  image: everglade.jpg
+  thumbnail: everglade.jpg
+  category: 
+  - wordpress
+  - design
+
+- title: Expert Authority
+  client: SuperFastBusiness
+  image: expert-authority.jpg
+  thumbnail: expert-authority.jpg
+  category: design
+
+- title: Five Star Management
+  client: SuperFastBusiness
+  website: http://myfivestar.com/
+  image: five-star-management.jpg
+  thumbnail: five-star-management.jpg
+  category: wordpress
+
+- title: Lost Empire Herbs
+  client: RecommendWP
+  website: http://lostempireherbs.com/
+  image: lost-empire-herbs.jpg
+  thumbnail: lost-empire-herbs.jpg
+  category: 
+    - wordpress
+    - woocommerce
+
+- title: Mbedded
+  client: RecommendWP
+  website: http://mbedded.com/
+  image: mbedded.jpg
+  thumbnail: mbedded.jpg
+  category: 
+    - wordpress 
+    - woocommerce
+
+- title: Persona
+  client: SuperFastBusiness
+  website: http://persona.viewwebsiteexamples.com/
+  image: persona.jpg
+  thumbnail: persona.jpg
+  category: 
+    - wordpress
+    - design
+
+- title: RA Widgets Animate
+  client: Rotsen Acob
+  website: https://wordpress.org/plugins/ra-widgets-animate/
+  image: ra-widgets-animate.jpg
+  thumbnail: ra-widgets-animate.jpg
+  category: plugin
+
+- title: RecommendWP
+  client: RecommendWP
+  website: http://recommendwp.com/
+  image: recommendwp.jpg
+  thumbnail: recommendwp.jpg
+  category: 
+    - design
+    - wordpress
+
+- title: School for Selling
+  client: SuperFastBusiness
+  image: school-for-selling.jpg
+  thumbnail: school-for-selling.jpg
+  category: html
+
+- title: Tom Woods
+  client: SuperFastBusiness
+  website: http://tomwoods.com/
+  image: tom-woods.jpg
+  thumbnail: tom-woods.jpg
+  category: wordpress
+
+- title: Travel Adventure Photography
+  client: SuperFastBusiness
+  website: http://traveladventurephotography.viewwebsiteexamples.com
+  image: travel-adventure-photography.jpg
+  thumbnail: travel-adventure-photography.jpg
+  category: 
+    - wordpress
+    - design
+
+- title: Tradie Theme
+  client: SuperFastBusiness
+  website: http://tradie.viewwebsiteexamples.com
+  image: tradie-theme.jpg
+  thumbnail: tradie-theme.jpg
+  category: 
+    - wordpress
+    - design
+
+- title: Travel Hacker
+  client: RecommendWP
+  website: http://thetravelhacker.com/
+  image: travel-hacker.jpg
+  thumbnail: travel-hacker.jpg
+  category: wordpress
+
+- title: View Website Examples
+  client: SuperFastBusiness
+  website: http://viewwebsiteexamples.com
+  image: viewwebsiteexamples.jpg
+  thumbnail: viewwebsiteexamples.jpg
+  category: 
+    - wordpress
+    - design
+
+- title: Weisman Pro
+  client: SuperFastBusiness
+  website: http://weisman-pro.viewwebsiteexamples.com
+  image: weisman-pro.jpg
+  thumbnail: weisman-pro.jpg
+  category: 
+    - wordpress
+    - design

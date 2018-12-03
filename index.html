@@ -1,92 +1,16 @@
 ---
 layout: default
 title: Rotsen Acob | Web Developer
+description: I'm a web developer, a self-proclaimed introvert and a *NIX enthusiast.
 ---
-<div class="page-header page-header-small" filter-color="orange">
-    <div class="page-header-image" data-parallax="true" style="background-image: url('/assets/images/carlos-muza-84523-unsplash.jpg');">
-    </div>
-    <div class="container">
-        <div class="content-center">
-            <div class="photo-container">
-                <img class="lazyload" data-src="/assets/images/rotsen-acob.jpg" alt="Rotsen Mark Acob">
-            </div>
-            <h3 class="title">Rotsen Mark Acob</h3>
-            <p class="category">Web Developer</p>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="button-container">
-            <!-- <a href="https://www.upwork.com/freelancers/~01a71b09fe4afc532d" target="_blank" class="btn btn-primary btn-round btn-lg">Hire Me</a> -->
-            <a href="mailto:acob.rotsen@hotmail.com" class="btn btn-primary btn-round btn-lg" rel="tooltip" title="" data-original-title="Send me an email">
-                <i class="fa fa-envelope"></i> Email Me
-            </a>
-            <a href="/assets/documents/acob_rotsen-resume.pdf" class="btn btn-primary btn-round btn-lg" rel="tooltip" title="" data-original-title="Download my resume">
-                <i class="fa fa-download"></i> Resume
-            </a>
-        </div>
-        <h3 class="title">About Me</h3>
-        <h5 class="description">I’m an experienced Web Developer with a demonstrated history of working in the information technology and services industry. I'm skilled in PHP, JavaScript, HTML5, Sass and the Command Line(CLI) and can worked on Linux, Windows and Unix environment.</h5>
 
-        {% include skills.html %}
+{% include page-header.html %}
 
-        <div class="row">
-            <div class="col-md-10 ml-auto mr-auto">
-                <h4 class="title text-center">My Portfolio</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 ml-auto mr-auto">
-                <div class="nav-align-center">
-                    <ul class="nav nav-tabs nav-tabs-primary justify-content-center" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link filter active" data-toggle="tab" data-filter="all" role="tablist">
-                                All
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link filter" data-toggle="tab" data-filter=".wordpress" role="tablist">
-                                PSD to WordPress
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link filter" data-toggle="tab" data-filter=".html" role="tablist">
-                                PSD to HTML
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link filter" data-toggle="tab" data-filter=".woocommerce" role="tablist">
-                                PSD to WooCommerce
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link filter" data-toggle="tab" data-filter=".design" role="tablist">
-                                Web Design
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link filter" data-toggle="tab" data-filter=".plugin" role="tablist">
-                                WordPress Plugins
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container collections text-center gallery">
-        <div class="row">
-            {% for portfolio in site.portfolio %}
-                <div class="col-sm-4 mix {{portfolio.categories | join: ' '}}">
-                    <a href="{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
-                        <img class="img-raised lazyload" data-src="{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+{% include about.html %}
+
+{% include skills.html %}
+
+{% include portfolio.html %}
 
 {% include testimonials.html %}
 

@@ -1,0 +1,60 @@
+{% if site.data.portfolio %}
+    <div class="section section-portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 ml-auto mr-auto">
+                    <h4 class="title text-center">My Portfolio</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ml-auto mr-auto">
+                    <div class="nav-align-center">
+                        <ul class="nav nav-tabs nav-tabs-primary justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link filter active" data-toggle="tab" data-filter="all" role="tablist">
+                                    All
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link filter" data-toggle="tab" data-filter=".wordpress" role="tablist">
+                                    PSD to WordPress
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link filter" data-toggle="tab" data-filter=".html" role="tablist">
+                                    PSD to HTML
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link filter" data-toggle="tab" data-filter=".woocommerce" role="tablist">
+                                    PSD to WooCommerce
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link filter" data-toggle="tab" data-filter=".design" role="tablist">
+                                    Web Design
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link filter" data-toggle="tab" data-filter=".plugin" role="tablist">
+                                    WordPress Plugins
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container collections text-center gallery">
+            <div class="row">
+                {% for portfolio in site.data.portfolio %}
+                    <div class="col-sm-4 mix {{portfolio.category | join: ' '}}">
+                        <a href="{{ '/assets/images/' | relative_url }}{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
+                            <img class="img-raised lazyload" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

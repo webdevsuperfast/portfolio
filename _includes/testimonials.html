@@ -7,14 +7,18 @@
                 <div class="testimonials row">
                 {% for testimonial in site.data.testimonials %}
                     <div class="testimonial col-md-4">
-                        <blockquote class="blockquote">
-                            <p class="mb-0">{{ testimonial.review }}</p>
-                            <footer class="blockquote-footer">{{ testimonial.name }}
-                                {%  if testimonial.location %} 
-                                from <cite>{{ testimonial.location }}</cite>
-                                {% endif %}
-                            </footer>
-                        </blockquote>
+                        <div class="card text-left">
+                            <div class="card-body">
+                                <blockquote class="blockquote blockquote-primary mb-0">
+                                    <p>{{ testimonial.review }}</p>
+                                    <footer class="blockquote-footer">{{ testimonial.name }}
+                                        {%  if testimonial.location %} 
+                                        from <cite>{{ testimonial.location }}</cite>
+                                        {% endif %}
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
                 </div>

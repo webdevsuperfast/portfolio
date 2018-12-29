@@ -10,7 +10,7 @@ markdown: kramdown
 # Excludes
 exclude: [
   'node_modules',
-  'gulpfile.babel.js',
+  'gulpfile.js',
   'package.json',
   '_sass',
   '_js',

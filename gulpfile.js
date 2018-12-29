@@ -14,37 +14,39 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    runSequence = require('run-sequence'),
-    browserSync = require('browser-sync'),
+    browserSync = require('browser-sync').create(),
     cp = require('child_process'),
     del = require('del'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-// Jekyll
-gulp.task( 'jekyll-build', function(done) {
-    browserSync.notify({message: 'Running jekyll build'});
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
-} );
+var paths = {
+    styles: {
+        src: 'assets/scss/style.scss',
+        dest: 'assets/css'
+    },
+    scripts: {
+        src: [
+            'node_modules/jquery/dist/jquery.slim.js',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/popper.js/dist/umd/popper.js',
+            'node_modules/now-ui-kit/assets/js/now-ui-kit.js',
+            'node_modules/mixitup/dist/mixitup.js',
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+            'node_modules/lazysizes/lazysizes.js'
+        ],
+        dest: 'assets/js'
+    }
+};
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
-});
+function jekyllBuild() {
+    return cp.spawn( jekyll, ['build'], {stdio: 'inherit'})
+}
 
-gulp.task('browser-sync', ['styles', 'scripts', 'jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        }
-    });
-});
-
-// CSS
-gulp.task('styles', function(){
+function style() {
     var cssStream = gulp.src('node_modules/magnific-popup/dist/magnific-popup.css')
         .pipe(concat('magnific-popup.css'));
 
-    var sassStream = gulp.src('assets/scss/style.scss')
+    var sassStream = gulp.src(paths.styles.src)
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(concat('app.scss'));
     
@@ -55,66 +57,53 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
         .pipe(minifycss())
-        .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest(paths.styles.dest))
+        // .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.stream({match: '**/*.css'}))
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;
-});
+}
 
-// JSHint
-gulp.task('lint', function(){
-    return gulp.src('assets/js/source/*.js')
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'))
-});
-
-// Scripts
-gulp.task('scripts', function() {
-    return gulp.src([
-        'node_modules/jquery/dist/jquery.slim.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
-        'node_modules/popper.js/dist/umd/popper.js',
-        'node_modules/now-ui-kit/assets/js/now-ui-kit.js',
-        'node_modules/mixitup/dist/mixitup.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-        'node_modules/lazysizes/lazysizes.js'
-    ])
-    .pipe(changed('js'))
+function js() {
+    return gulp.src(paths.scripts.src)
     .pipe(foreach(function(stream, file){
         return stream
             .pipe(uglify())
             .pipe(rename({suffix: '.min'}))
-            .pipe(gulp.dest('temp/js'))
     }))
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.reload({stream:true}))
     .pipe(notify({ message: 'Scripts task complete' }));
-});
+}
 
-// Clean
-gulp.task('clean', function(cb) {
-    return gulp.src('temp/*')
-    .pipe(vinylpaths(del))
-});
+function browserSyncServe(done) {
+    browserSync.init({
+        injectChanges: true,
+        server: {
+            baseDir: '_site'
+        }
+    })
+    done();
+}
 
-// Default task
-gulp.task('default', function(){
-    runSequence(
-        'browser-sync',
-        ['styles', 'lint', 'scripts'],
-        'watch'
-    );
-});
+function browserSyncReload(done) {
+    browserSync.reload();
+    done();
+}
 
-// Watch
-gulp.task('watch', function() {
-    // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
+function watch() {
+    gulp.watch(paths.styles.src, style).on('change', browserSync.reload)
+    gulp.watch(paths.scripts.src, js)
+    gulp.watch(
+    [
+        '*.html', 
+        '_layouts/*.html', 
+        '_posts/*', 
+        '_portfolio/*', 
+        '_includes/*'
+    ],
+    gulp.series(jekyllBuild, browserSyncReload));
+}
 
-    // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
-
-    // Watch .html files
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_portfolio/*', '_includes/*'], ['jekyll-rebuild']);
-});
+gulp.task('default', gulp.parallel(jekyllBuild, style, js, browserSyncServe, watch))

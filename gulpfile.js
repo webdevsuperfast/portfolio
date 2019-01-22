@@ -2,21 +2,15 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-clean-css'),
-    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    prettify = require('gulp-jsbeautifier'),
-    vinylpaths = require('vinyl-paths'),
     cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
-    changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
     cp = require('child_process'),
-    del = require('del'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var paths = {
@@ -58,7 +52,6 @@ function style() {
         .pipe(rename('app.css'))
         .pipe(minifycss())
         .pipe(gulp.dest(paths.styles.dest))
-        // .pipe(browserSync.reload({stream:true}))
         .pipe(browserSync.stream({match: '**/*.css'}))
         .pipe(notify({ message: 'Styles task complete' }));
     

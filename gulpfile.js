@@ -1,17 +1,24 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-clean-css'),
+    postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     browserSync = require('browser-sync').create(),
     cp = require('child_process'),
+    autoprefixer = require('autoprefixer'),
+    cssnano = require('cssnano'),
+    cmq = require('css-mqpacker'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+
+var plugins = [
+    autoprefixer,
+    cssnano,
+    cmq
+]
 
 var paths = {
     styles: {
@@ -46,11 +53,8 @@ function style() {
     
     var mergeStream = merge(sassStream, cssStream)
         .pipe(concat('app.css'))
-        .pipe(autoprefixer('last 2 versions'))
-        .pipe(cmq())
-        .pipe(gulp.dest('temp/css'))
+        .pipe(postcss(plugins))
         .pipe(rename('app.css'))
-        .pipe(minifycss())
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream({match: '**/*.css'}))
         .pipe(notify({ message: 'Styles task complete' }));

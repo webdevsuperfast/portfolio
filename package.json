@@ -8,14 +8,15 @@
   "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
+    "autoprefixer": "^9.4.6",
     "browser-sync": "^2.26.3",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.8",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-flatmap": "^1.0.2",
     "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
@@ -23,11 +24,11 @@
   },
   "dependencies": {
     "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
     "lazysizes": "^4.1.5",
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
     "now-ui-kit": "^1.1.0",
-    "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   },
   "bugs": {

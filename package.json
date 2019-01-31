@@ -8,7 +8,7 @@
   "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^9.4.6",
+    "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.8",
@@ -29,7 +29,7 @@
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
     "now-ui-kit": "^1.1.0",
-    "popper.js": "^1.14.6"
+    "popper.js": "^1.14.7"
   },
   "bugs": {
     "url": "https://github.com/webdevsuperfast/webdevsuperfast.github.io/issues"

@@ -98,7 +98,8 @@ function watch() {
         '_layouts/*.html', 
         '_posts/*', 
         '_portfolio/*', 
-        '_includes/*'
+        '_includes/*',
+        '_data/*'
     ],
     gulp.series(jekyllBuild, browserSyncReload));
 }

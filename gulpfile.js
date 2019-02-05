@@ -16,7 +16,13 @@ var gulp = require('gulp'),
 
 var plugins = [
     autoprefixer,
-    cssnano,
+    cssnano({
+        preset: ['default', {
+            discardComments: {
+                removeAll: true,
+            },
+        }]
+    }),
     cmq
 ]
 
@@ -56,7 +62,7 @@ function style() {
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.stream({match: '**/*.css'}))
+        .pipe(browserSync.reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;

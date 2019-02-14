@@ -10,28 +10,20 @@
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
         </div>
+        {% if site.data.social %}
         <div class="collapse navbar-collapse justify-content-end" data-nav-image="/assets/images/blurred-image-1.jpg">
             <ul class="navbar-nav">
+                {% for social in site.data.social %}
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Follow me on GitHub" data-placement="bottom" href="https://github.com/webdevsuperfast" target="_blank">
-                        <i class="fa fa-github"></i>
-                        <p class="d-lg-none d-xl-none">GitHub</p>
+                    <a class="nav-link" rel="tooltip" title="{{ social.title }}" data-placement="bottom" href="{{ social.url }}" target="_blank">
+                        <i class="fa fa-{{ social.icon }}"></i>
+                        <p class="d-lg-none d-xl-none">{{ social.name }}</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Follow me on LinkedIn" data-placement="bottom" href="https://www.linkedin.com/in/acobrotsen" target="_blank">
-                        <i class="fa fa-linkedin"></i>
-                        <p class="d-lg-none d-xl-none">LinkedIn</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Rate me on WordPress" data-placement="bottom" href="https://profiles.wordpress.org/frodobean" target="_blank">
-                        <i class="fa fa-wordpress"></i>
-                        <p class="d-lg-none d-xl-none">WordPress</p>
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
+        {% endif  %}
     </div>
 </nav>
 <div class="wrapper">

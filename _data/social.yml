@@ -1,0 +1,14 @@
+- name: GitHub
+  url: https://github.com/webdevsuperfast
+  title: Follow me on GitHub
+  icon: github
+
+- name: LinkedIn
+  url: https://www.linkedin.com/in/acobrotsen
+  title: Follow me on LinkedIn
+  icon: linkedin
+
+- name: WordPress
+  url: https://profiles.wordpress.org/frodobean
+  title: Rate me on WordPress
+  icon: wordpress

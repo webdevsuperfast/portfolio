@@ -11,7 +11,7 @@
     "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.8",
+    "cssnano": "^4.1.9",
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-flatmap": "^1.0.2",
@@ -23,7 +23,7 @@
     "merge-stream": "^1.0.1"
   },
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "lazysizes": "^4.1.5",
     "magnific-popup": "^1.1.0",

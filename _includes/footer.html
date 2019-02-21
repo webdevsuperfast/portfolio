@@ -9,7 +9,7 @@
 </div>
 <script src="{{ '/assets/js/jquery.slim.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/popper.min.js' | relative_url }}" defer></script>
-<script data-cfasync="false" src="{{ '/assets/js/bootstrap.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/now-ui-kit.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}" defer></script>
@@ -64,12 +64,6 @@
                     }
                 }
             });
-
-            $('.progress-bar').css("width",
-                function() {
-                    return $(this).attr("aria-valuenow") + "%";
-                }
-            );
         });
     })(jQuery);
 </script>

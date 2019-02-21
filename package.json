@@ -8,7 +8,7 @@
   "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.4.8",
     "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",

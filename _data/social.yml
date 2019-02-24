@@ -1,3 +1,8 @@
+- name: Email
+  url: mailto:acob.rotsen@hotmail.com
+  title: Email me
+  icon: envelope
+  
 - name: GitHub
   url: https://github.com/webdevsuperfast
   title: Follow me on GitHub
@@ -12,3 +17,8 @@
   url: https://profiles.wordpress.org/frodobean
   title: Rate me on WordPress
   icon: wordpress
+
+# - name: Resume
+#   url: acob_rotsen-resume.pdf
+#   title: Download my resume
+#   icon: file-pdf-o

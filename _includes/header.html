@@ -6,8 +6,70 @@
     <meta name="google-site-verification" content="f1pibpLr0O-CAKHRGuwJGGCoPFcYi8AR44YzMxc0fh0" />
     <meta name="msvalidate.01" content="F7E7125AA252E622EA9ED516931281E1" />
     <link rel="stylesheet" href="{{ '/assets/css/app.css' | relative_url }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}">
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-200.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-200italic.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-regular.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-italic.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-700.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/montserrat/montserrat-v12-latin-700italic.woff2' | relative_url }}" as="font" crossorigin>
+    <style>
+        /* montserrat-200 - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 200;
+        src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-200.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* montserrat-200italic - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: italic;
+        font-weight: 200;
+        src: local('Montserrat ExtraLight Italic'), local('Montserrat-ExtraLightItalic'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-200italic.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* montserrat-regular - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-regular.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* montserrat-italic - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Montserrat Italic'), local('Montserrat-Italic'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-italic.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* montserrat-700 - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-700.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* montserrat-700italic - latin */
+        @font-face {
+        font-family: 'Montserrat';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'),
+            url("{{ '/assets/fonts/montserrat/montserrat-v12-latin-700italic.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+    </style>
 </head>
 <body class="profile-page sidebar-collapse">

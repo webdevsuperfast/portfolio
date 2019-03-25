@@ -1,60 +1,50 @@
-{% if site.data.portfolio %}
-    <div class="section section-portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 ml-auto mr-auto">
-                    <h4 class="title text-center">My Portfolio</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 ml-auto mr-auto">
-                    <div class="nav-align-center">
-                        <ul class="nav nav-tabs nav-tabs-primary justify-content-center" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link filter active" data-toggle="tab" data-filter="all" role="tablist">
-                                    All
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link filter" data-toggle="tab" data-filter=".wordpress" role="tablist">
-                                    PSD to WordPress
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link filter" data-toggle="tab" data-filter=".html" role="tablist">
-                                    PSD to HTML
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link filter" data-toggle="tab" data-filter=".woocommerce" role="tablist">
-                                    PSD to WooCommerce
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link filter" data-toggle="tab" data-filter=".design" role="tablist">
-                                    Web Design
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link filter" data-toggle="tab" data-filter=".plugin" role="tablist">
-                                    WordPress Plugins
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container collections text-center gallery">
-            <div class="row">
-                {% for portfolio in site.data.portfolio %}
-                    <div class="col-sm-4 mix {{portfolio.category | join: ' '}}">
-                        <a href="{{ '/assets/images/' | relative_url }}{{portfolio.image}}" title="{{portfolio.title}}" data-url="{{portfolio.website}}">
-                            <img class="img-raised lazyload" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
-                        </a>
-                    </div>
+<section class="u-content-space">
+    <div class="container">
+        <header class="text-center w-md-50 mx-auto mb-8">
+            <h2 class="h1">My Portfolio</h2>
+            <p class="h5">I design and develop themes and plugins that make people's lives easy and simple.</p>
+        </header>
+        <ul class="js-shuffle-controls u-portfolio-controls text-center mb-5">
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="all" class="active">All</a></li>
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="wordpress">PSD to WordPress</a></li>
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="html">PSD to HTML</a></li>
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="woocommerce">PSD to WooCommerce</a></li>
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="design">Web Design</a></li>
+            <li class="u-portfolio-controls__item"><a href="#!" data-group="plugin">WordPress Plugins</a></li>
+        </ul>
+        <div class="js-shuffle u-portfolio row no-gutters mb-6">
+            {% for portfolio in site.data.portfolio %}
+            {%- assign categories = portfolio.category -%}
+            {% capture cat %}
+                {% for category in categories %}
+                    {%- if forloop.first == true -%}
+                        {%- if forloop.length > 1 -%}
+                            {{- category | capitalize | append: ', ' -}}
+                        {%- else -%}
+                            {{- category | capitalize -}}
+                        {%- endif -%}
+                    {%- else -%}
+                        {{- category | capitalize -}}
+                    {%- endif -%}
                 {% endfor %}
-            </div>
+            {% endcapture %}
+            {% assign groups = portfolio.category | split: ' ' | size %}
+            {%- capture group -%}
+                {%- if groups > 1 -%}
+                    {{ portfolio.category | jsonify }}
+                {%- else -%}
+                    [{{ portfolio.category | jsonify }}]
+                {%- endif -%}
+            {%- endcapture -%}
+            <figure class="col-sm-6 col-md-4 u-portfolio__item {{portfolio.category | join: ' '}}" data-groups='{{group}}'>
+                <img class="u-portfolio__image" src="{{ '/assets/images/thumbs/' | relative_url }}{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+                <figcaption class="u-portfolio__info">
+                    <h6 class="mb-0">{{ portfolio.title }}</h6>
+                    <small class="d-block">{{ cat }}</small>
+                </figcaption>
+                <a class="js-popup-image u-portfolio__zoom" href="{{ '/assets/images/' | relative_url }}{{portfolio.image}}">Zoom</a>
+            </figure>
+            {% endfor %}
         </div>
     </div>
-{% endif %}
+</section>

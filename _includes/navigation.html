@@ -1,29 +1,31 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-    <div class="container">
-        <div class="navbar-translate">
-            <a class="navbar-brand" href="/" title="{{page.title}}">
-                Rotsen Acob
-            </a>
-            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-            </button>
-        </div>
-        {% if site.data.social %}
-        <div class="collapse navbar-collapse justify-content-end" data-nav-image="/assets/images/blurred-image-1.jpg">
-            <ul class="navbar-nav">
-                {% for social in site.data.social %}
-                <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="{{ social.title }}" data-placement="bottom" href="{{ social.url }}" target="_blank">
-                        <i class="fa fa-{{ social.icon }}"></i>
-                        <p class="d-lg-none d-xl-none">{{ social.name }}</p>
+<header>
+    <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="{{ 'assets/images/logo.svg' }}" alt="Rotsen Mark Acob" width="50">
+                </a>
+    
+                <button class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarTogglerDemo"
+    
+                        aria-controls="navbarTogglerDemo"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
+                    <li class="nav-item mr-4 mb-2 mb-lg-0">
+                    <a class="nav-link active" href="">Rotsen Mark Acob</a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="btn btn-primary" href="#contact">
+                    <i class="fas fa-envelope mr-1"></i> Contact Me
                     </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif  %}
-    </div>
-</nav>
-<div class="wrapper">
+                </div>
+                </div>
+            </div>
+    </nav>

@@ -1,20 +1,27 @@
-@import 'variable';
+// @import 'variable';
 
-@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+// @import '../../node_modules/font-awesome/scss/font-awesome.scss';
 
 // Bootstrap
-@import '../../node_modules/bootstrap/scss/bootstrap';
+// @import '../../node_modules/bootstrap/scss/bootstrap';
 
 // Now UI Kit
-@import '../../node_modules/now-ui-kit/assets/sass/now-ui-kit';
+// @import '../../node_modules/now-ui-kit/assets/sass/now-ui-kit';
 
-.nav-tabs {
-    @include media-breakpoint-down(sm) {
-        padding: {
-            left: 0;
-            right: 0;
-        }
-    }
+// Bootstrap
+@import '../../node_modules/stream/assets/include/scss/vendors/bootstrap/bootstrap.scss';
+
+// Stream UI Kit
+@import '../../node_modules/stream/assets/include/scss/styles.scss';
+
+@import '../../node_modules/stream/assets/vendors/magnific-popup/magnific-popup';
+
+.avatar {
+	@extend .img-fluid; 
+	@extend .u-avatar;
+	@extend .u-box-shadow-lg;
+	@extend .rounded-circle;
+	@extend .mb-3;
 }
 
 // Lazysizes
@@ -25,51 +32,4 @@
 .lazyloaded {
 	opacity: 1;
 	transition: opacity 300ms;
-}
-
-/** ## About 
------------------------------------------------------------------------------ */
-.profile-page h5.description {
-    margin-bottom: 20px;
-}
-
-/** ## Portfolio
------------------------------------------------------------------------------ */
-.section-skills {
-    background: #eee;
-}
-
-/* ## Testimonial
------------------------------------------------------------------------------ */
-.section-testimonial {
-    background: #eee;
-}
-
-/* ## Contact Form
------------------------------------------------------------------------------ */
-.section-contact {
-    .send-button {
-        margin-top: 35px;
-    }
-}
-
-/* ## Carousel
------------------------------------------------------------------------------ */
-.carousel {
-    padding-bottom: 50px;
-    .carousel-inner {
-        box-shadow: none;
-    }
-}
-
-.carousel-indicators {
-    li {
-        background-color: $primary-color;
-    }
-}
-
-/* ## Magnific Popup
------------------------------------------------------------------------------ */
-.mfp-title {
-    font-size: 14px;
 }

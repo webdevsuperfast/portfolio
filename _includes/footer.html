@@ -1,56 +1,52 @@
-    {% if page.layout == "default" %}
-    <footer class="footer footer-default">
-        <div class="container text-center">
-            &copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script> Rotsen Acob. All rights reserved.
+</main> <!-- End Main -->
+{% if page.layout == "default" %}
+<footer class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
+                    <small class="text-white">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> Rotsen Acob. All rights reserved.
+                    </small>
+            </div>
+            <div class="col-md-4 align-self-center">
+                {% if site.data.social %}
+                <ul class="list-inline text-center text-md-right mb-0">
+                    {% for social in site.data.social %}
+                    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="{{ social.title }}">
+                        <a class="text-white" href="{{ social.url }}">
+                            {% if social.icon == 'envelope' %}
+                                <i class="fas fa-{{ social.icon }}"></i>
+                            {% else %}
+                                <i class="fab fa-{{ social.icon }}"></i>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
         </div>
-    </footer>
-    {% endif %}
-</div>
-<script src="{{ '/assets/js/jquery.slim.min.js' | relative_url }}"></script>
+    </div>
+</footer>
+{% endif %}
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/jquery.migrate.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/popper.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/now-ui-kit.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" defer></script>
 <script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/jquery.parallax.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/jquery.shuffle.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/lazysizes.min.js' | relative_url }}" defer></script>
-<script>
-    (function($){
-        var containerEl = document.querySelector('.collections');
-        var mixer = mixitup(containerEl, {
-            callbacks: {
-                onMixStart: function(state,futureState){
-                }
-            }
-        });
+<script src="{{ '/assets/js/jquery.smooth-scroll.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/jquery.back-to-top.min.js' | relative_url }}" defer></script>
 
-        // Magnific Popup
-        $(document).ready(function(){
-            $('.gallery').magnificPopup({
-                delegate: 'a',
-                type: 'image',
-                tLoading: 'Loading image #%curr%...',
-                mainClass: 'mfp-img-mobile',
-                gallery: {
-                    enabled: true,
-                    navigateByImgClick: true,
-                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-                },
-                image: {
-                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-                    titleSrc: function(item) {
-                        if ( item.el.data("url") ) {
-                            return item.el.attr('title') + '<small><a target="_blank" href="'+item.el.data("url")+'">Visit Site</a></small>';
-                        } else {
-                            return item.el.attr('title');
-                        }
-                    }
-                }
-            });
-        });
-    })(jQuery);
-</script>
+<script src="{{ '/assets/js/global.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/parallax.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/shuffle.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/magnific-popup.min.js' | relative_url }}" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-dart-sass'),
+    sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -12,6 +12,9 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     cmq = require('css-mqpacker'),
+    gulpCopy = require('gulp-copy'),
+    changed = require('gulp-changed'),
+    through = require('through2'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [
@@ -33,15 +36,30 @@ var paths = {
     },
     scripts: {
         src: [
-            'node_modules/jquery/dist/jquery.slim.js',
-            'node_modules/bootstrap/dist/js/bootstrap.js',
-            'node_modules/popper.js/dist/umd/popper.js',
-            'node_modules/now-ui-kit/assets/js/now-ui-kit.js',
-            'node_modules/mixitup/dist/mixitup.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            'node_modules/lazysizes/lazysizes.js'
+            'node_modules/stream/assets/vendors/bootstrap/js/bootstrap.js',
+            'node_modules/stream/assets/js/global.js',
+            'node_modules/stream/assets/vendors/magnific-popup/jquery.magnific-popup.js',
+            'node_modules/lazysizes/lazysizes.js',
+            'node_modules/stream/assets/vendors/jquery.parallax.js',
+            'node_modules/stream/assets/js/vendors/parallax.js',
+            'node_modules/stream/assets/js/vendors/shuffle.js',
+            'node_modules/stream/assets/js/vendors/magnific-popup.js'
+        ],
+        minified: [
+            'node_modules/stream/assets/vendors/popper.min.js',
+            'node_modules/stream/assets/vendors/jquery.min.js',
+            'node_modules/stream/assets/vendors/jquery.migrate.min.js',
+            'node_modules/stream/assets/vendors/jquery.back-to-top.min.js',
+            'node_modules/stream/assets/vendors/jquery.smooth-scroll.min.js',
+            'node_modules/stream/assets/vendors/shuffle/jquery.shuffle.min.js'
         ],
         dest: 'assets/js'
+    },
+    sources: {
+        src: [
+            'node_modules/stream/assets/include/scss/**/**'
+        ],
+        dest: 'assets/scss/sources/' 
     }
 };
 
@@ -51,22 +69,15 @@ function jekyllBuild() {
 }
 
 function style() {
-    var cssStream = gulp.src('node_modules/magnific-popup/dist/magnific-popup.css')
-        .pipe(concat('magnific-popup.css'));
-
-    var sassStream = gulp.src(paths.styles.src)
+    return gulp.src(paths.styles.src)
+        .pipe(changed(paths.styles.dest))
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(concat('app.scss'));
-    
-    var mergeStream = merge(sassStream, cssStream)
-        .pipe(concat('app.css'))
+        .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
-    
-    return mergeStream;
 }
 
 function js() {
@@ -77,17 +88,27 @@ function js() {
             .pipe(rename({suffix: '.min'}))
     }))
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.stream())
     .pipe(notify({ message: 'Scripts task complete' }));
+}
+
+function jsMinified() {
+    return gulp.src(paths.scripts.minified)
+        .pipe(changed(paths.scripts.dest))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream())
+        .pipe(notify({message: 'Minified scripts task complete' }));
 }
 
 function browserSyncServe(done) {
     browserSync.init({
         injectChanges: true,
         server: {
-            baseDir: '_site'
-        }
-    })
+            baseDir: './_site/'
+        },
+        port: 3000
+    });
+    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
     done();
 }
 
@@ -97,8 +118,8 @@ function browserSyncReload(done) {
 }
 
 function watch() {
-    gulp.watch(paths.styles.src, style).on('change', browserSync.reload)
-    gulp.watch(paths.scripts.src, js)
+    gulp.watch(['assets/scss/style.scss', 'assets/scss/**/**/*.scss'], style).on('change', browserSync.reload)
+    gulp.watch(paths.scripts.src, gulp.series(js, jsMinified))
     gulp.watch(
     [
         '*.html', 
@@ -111,4 +132,4 @@ function watch() {
     gulp.series(jekyllBuild, browserSyncReload));
 }
 
-gulp.task('default', gulp.parallel(jekyllBuild, style, js, browserSyncServe, watch))
+gulp.task('default', gulp.parallel(jekyllBuild, style, gulp.series(js, jsMinified), browserSyncServe, watch))

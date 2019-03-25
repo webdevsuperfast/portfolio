@@ -1,57 +1,28 @@
 {% if site.data.testimonials %}
-<div class="section section-testimonial">
+<section class="section section-testimonial u-content-space bg-light">
     <div class="container">
+        <header class="text-center w-md-50 mx-auto mb-8">
+            <h2 class="h1">Testimonials</h2>
+            <p class="h5">Do not take my words, check out what people say about me!</p>
+        </header>
         <div class="row">
-            <div class="col text-center ml-auto mr-auto">
-                <h4 class="title">Testimonials</h4>
-                <div class="testimonials row">
-                    <div class="col-md-12">
-                        <div id="client-testimonial" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                {% for testimonial in site.data.testimonials %}
-                                    <div class="carousel-item
-                                    {% if forloop.first == true %}
-                                        active
-                                    {% endif %}
-                                    ">
-                                        <blockquote>
-                                            <div class="row">
-                                                <div class="col-md-6 offset-md-3">
-                                                    <p class="h4">{{ testimonial.review }}</p>
-                                                    <small class="blockquote-footer">
-                                                        {{ testimonial.name }}
-                                                        {%  if testimonial.location %} 
-                                                        from <cite>{{ testimonial.location }}</cite>
-                                                        {% endif %}
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <!-- <a class="carousel-control-prev" href="#client-testimonial" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a> -->
-                            <!-- <a class="carousel-control-next" href="#client-testimonial" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a> -->
-                            <ol class="carousel-indicators">
-                                {% for testimonial in site.data.testimonials %}
-                                    <li data-target="#client-testimonial" data-slide-to="{{ forloop.index0 }}" class="
-                                    {% if forloop.first == true %}
-                                        active
-                                    {% endif %}"
-                                    ></li>
-                                {% endfor %}
-                            </ol>
+            {% if site.data.testimonials %}
+            {% for testimonial in site.data.testimonials %}
+                <div class="col-lg-6 mb-7 mb-lg-7 px-lg-5">
+                    <blockquote class="u-blockquote-v2 rounded mb-5">{{ testimonial.review }}</blockquote>
+                    <div class="media u-font-size-90">
+                        <img class="d-flex align-self-center rounded-circle u-blockquote-v2__image u-box-shadow-lg mx-3 mt-2" src="{{ '/assets/images/upwork.png' }}" alt="{{ testimonial.name }}">
+                        <div class="media-body align-self-center">
+                            <strong class="d-block">{{ testimonial.name }}</strong>
+                            {% if testimonial.location %}
+                            <span class="u-font-size-75 text-dark">{{ testimonial.location }}</span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
-</div>
+</section>
 {% endif %}

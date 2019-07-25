@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     cp = require('child_process'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    cmq = require('css-mqpacker'),
     gulpCopy = require('gulp-copy'),
     changed = require('gulp-changed'),
     through = require('through2'),
@@ -25,8 +24,7 @@ var plugins = [
                 removeAll: true,
             },
         }]
-    }),
-    cmq
+    })
 ]
 
 var paths = {

@@ -5,15 +5,12 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     browserSync = require('browser-sync').create(),
     cp = require('child_process'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    gulpCopy = require('gulp-copy'),
     changed = require('gulp-changed'),
-    through = require('through2'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [

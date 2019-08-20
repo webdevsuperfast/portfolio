@@ -19,6 +19,6 @@
   icon: wordpress
 
 - name: Resume
-  url: acob_rotsen-resume.pdf
+  url: 'assets/documents/acob_rotsen-resume.pdf'
   title: Download Resume
   icon: file-pdf

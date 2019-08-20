@@ -1,4 +1,5 @@
-    <section class="js-parallax u-promo-block u-promo-block--mheight-500 u-overlay u-overlay--dark text-white" style="background-image: url('/assets/images/carlos-muza-84523-unsplash.jpg');">
+    {% assign bg = site.page_background %}
+    <section class="js-parallax u-promo-block u-promo-block--mheight-500 u-overlay u-overlay--dark text-white" style="background-image: url('{{ bg | relative_url }}');">
         <div class="container u-overlay__inner u-ver-center u-content-space">
             <div class="row justify-content-center">
                 <div class="col-12">

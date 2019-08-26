@@ -9,7 +9,46 @@
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}">
     <link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-300.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-regular.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-600.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-700.woff2' | relative_url }}" as="font" crossorigin>
+    <style>
+        /* open-sans-300 - latin */
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Poppins Light'), local('Poppins-Light'),
+            url("{{ '/assets/fonts/poppins/poppins-v8-latin-300.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ *//* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+
+        /* open-sans-regular - latin */
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Poppins Regular'), local('Poppins-Regular'),
+            url("{{ '/assets/fonts/poppins/poppins-v8-latin-regular.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* open-sans-600 - latin */
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
+            url("{{ '/assets/fonts/poppins/poppins-v8-latin-600.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* open-sans-700 - latin */
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Poppins Bold'), local('Poppins-Bold'),
+        url("{{ '/assets/fonts/poppins/poppins-v8-latin-700.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+    </style>
 </head>
 <body>

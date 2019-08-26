@@ -12,10 +12,11 @@
                             <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="{{ social.title }}">
                                 <a class="text-white" href="{{ social.url }}">
                                     {% if social.icon == 'envelope' or social.icon == 'file-pdf' %}
-                                        <i class="fas fa-{{ social.icon }}"></i>
+                                        <!-- <i class="fas fa-{{ social.icon }}"></i> -->
                                     {% else %}
-                                        <i class="fab fa-{{ social.icon }}"></i>
+                                        <!-- <i class="fab fa-{{ social.icon }}"></i> -->
                                     {% endif %}
+                                    <i class="fa fa-{{ social.icon }}"></i>
                                 </a>
                             </li>
                             {% endfor %}

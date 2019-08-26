@@ -15,12 +15,12 @@
                 {% if site.data.social %}
                 <ul class="list-inline text-center text-md-right mb-0">
                     {% for social in site.data.social %}
-                        {% if social.icon == 'envelope' or social.icon == 'file-pdf' %}
+                        {% if social.icon == 'envelope' or social.icon == 'file-pdf-o' %}
                             {% continue %}
                         {% else %}
                             <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="{{ social.title }}">
                                 <a class="text-white" href="{{ social.url }}">
-                                    <i class="fab fa-{{ social.icon }}"></i>
+                                    <i class="fa fa-{{ social.icon }}"></i>
                                 </a>
                             </li>
                         {% endif %}

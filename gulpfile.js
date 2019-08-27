@@ -72,7 +72,8 @@ function style() {
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ 
+            'message': 'Styles task complete' }));
 }
 
 function js() {
@@ -84,7 +85,9 @@ function js() {
     }))
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.stream())
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(notify({ 
+        'message': 'Scripts task complete' 
+    }));
 }
 
 function jsMinified() {
@@ -92,7 +95,9 @@ function jsMinified() {
         .pipe(changed(paths.scripts.dest))
         .pipe(gulp.dest(paths.scripts.dest))
         .pipe(browserSync.stream())
-        .pipe(notify({message: 'Minified scripts task complete' }));
+        .pipe(notify({
+            'message': 'Minified scripts task complete' 
+        }));
 }
 
 function browserSyncServe(done) {

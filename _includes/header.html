@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}" type="image/x-icon">
     <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-300.woff2' | relative_url }}" as="font" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-regular.woff2' | relative_url }}" as="font" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-500.woff2' | relative_url }}" as="font" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-600.woff2' | relative_url }}" as="font" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/poppins/poppins-v8-latin-700.woff2' | relative_url }}" as="font" crossorigin>
     <style>
@@ -30,6 +31,15 @@
         font-weight: 400;
         src: local('Poppins Regular'), local('Poppins-Regular'),
             url("{{ '/assets/fonts/poppins/poppins-v8-latin-regular.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+        }
+
+        /* open-sans-500 - latin */
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Poppins Medium'), local('Poppins-Medium'),
+            url("{{ '/assets/fonts/poppins/poppins-v8-latin-500.woff2' | relative_url }}") format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
         }
 
         /* open-sans-600 - latin */

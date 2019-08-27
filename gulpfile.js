@@ -73,7 +73,8 @@ function style() {
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ 
-            'message': 'Styles task complete' }));
+            'message': 'Styles task complete' 
+        }));
 }
 
 function js() {

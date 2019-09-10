@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     changed = require('gulp-changed'),
+    critical = require('critical'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [
@@ -77,6 +78,18 @@ function style() {
         }));
 }
 
+function criticalCss() {
+    critical.generate({
+        base: './',
+        src: '_site/index.html',
+        css: 'assets/css/app.css',
+        dest: '_includes/critical.css',
+        width: 320,
+        height: 480,
+        minify: true
+    });
+}
+
 function js() {
     return gulp.src(paths.scripts.src)
     .pipe(foreach(function(stream, file){
@@ -133,4 +146,6 @@ function watch() {
     gulp.series(jekyllBuild, browserSyncReload));
 }
 
-gulp.task('default', gulp.parallel(jekyllBuild, style, gulp.series(js, jsMinified), browserSyncServe, watch))
+gulp.task('default', gulp.parallel(jekyllBuild, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));
+
+// gulp.task('default', gulp.parallel(style, jekyllBuild, browserSyncServe, watch))

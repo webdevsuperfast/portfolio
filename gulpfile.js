@@ -147,5 +147,3 @@ function watch() {
 }
 
 gulp.task('default', gulp.parallel(jekyllBuild, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));
-
-// gulp.task('default', gulp.parallel(style, jekyllBuild, browserSyncServe, watch))

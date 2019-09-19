@@ -33,6 +33,8 @@
   },
   "homepage": "https://github.com/webdevsuperfast/webdevsuperfast.github.io#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "bundle install",
+    "start": "bundle exec gulp",
+    "test": "bundle exec gulp test"
   }
 }

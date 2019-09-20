@@ -28,7 +28,6 @@
     "webp-hero": "^0.0.0-dev.24"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "lazysizes": "^5.1.1",
     "stream": "https://github.com/htmlstreamofficial/stream-ui-kit"
   },

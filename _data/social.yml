@@ -18,7 +18,7 @@
   title: Rate me on WordPress
   icon: wordpress
 
-- name: Resume
-  url: 'assets/documents/acob_rotsen-resume.pdf'
-  title: Download Resume
-  icon: file-pdf-o
+# - name: Resume
+#   url: 'assets/documents/acob_rotsen-resume.pdf'
+#   title: Download Resume
+#   icon: file-pdf-o

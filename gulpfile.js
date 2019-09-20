@@ -107,18 +107,31 @@ function criticalCss() {
 
 function images() {
     var featured = gulp.src(paths.images.feature)
+        .pipe(changed('./assets/images'))
         .pipe(webp())
         .pipe(gulp.dest('./assets/images/'));
     var thumbnail = gulp.src(paths.images.thumbnail)
+        .pipe(changed('./assets/images/thumbs'))
         .pipe(webp())
         .pipe(gulp.dest('./assets/images/thumbs'));
     var svg = gulp.src([
         './develop/images/*.{svg}',
-        './develop/images/school-for-selling.jpg'
+        './develop/images/school-for-selling.jpg',
+        './develop/images/carlos-muza-84523-unsplash.jpg'
     ])
+        .pipe(changed('./assets/images'))
         .pipe(gulp.dest('./assets/images'));
 
     return merge(featured, thumbnail, svg);
+}
+
+function fonts() {
+    var fontAwesome = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(changed('assets/fonts/font-awesome'))
+        .pipe(gulp.dest('assets/fonts/font-awesome'));
+    
+    return merge(fontAwesome);
+
 }
 
 function js() {
@@ -172,11 +185,12 @@ function watch() {
         '_posts/*', 
         '_portfolio/*', 
         '_includes/*',
-        '_data/*'
+        '_data/*',
+        'assets/*'
     ],
     gulp.series(jekyllBuild, browserSyncReload));
 }
 
-gulp.task('images', images);
+// gulp.task('images', images);
 
-gulp.task('default', gulp.parallel(jekyllBuild, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));
+gulp.task('default', gulp.parallel(jekyllBuild, fonts, style, criticalCss, images, gulp.series(js, jsMinified), browserSyncServe, watch));

@@ -3,7 +3,7 @@ email: acob.rotsen@hotmail.com
 description: Web developer, self-proclaimed introvert and UNIX enthusiast.
 twitter_username: acobrotsen
 github_username:  webdevsuperfast
-page_background: 'assets/images/carlos-muza-84523-unsplash.webp'
+page_background: 'assets/images/carlos-muza-84523-unsplash.jpg'
 
 # Build settings
 markdown: kramdown

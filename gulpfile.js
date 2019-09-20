@@ -41,7 +41,9 @@ var paths = {
             'node_modules/stream/assets/vendors/jquery.parallax.js',
             'node_modules/stream/assets/js/vendors/parallax.js',
             'node_modules/stream/assets/js/vendors/shuffle.js',
-            'node_modules/stream/assets/js/vendors/magnific-popup.js'
+            'node_modules/stream/assets/js/vendors/magnific-popup.js',
+            'node_modules/webp-hero/dist-cjs/polyfills.js',
+            'node_modules/webp-hero/dist-cjs/webp-hero.bundle.js'
         ],
         minified: [
             'node_modules/stream/assets/vendors/popper.min.js',

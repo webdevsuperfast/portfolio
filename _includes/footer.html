@@ -32,7 +32,9 @@
     </div>
 </footer>
 {% endif %}
-<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/polyfills.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/webp-hero.bundle.min.js' | relative_url }}"></script>
 <script src="{{ 'assets/js/jquery.migrate.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/popper.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}" defer></script>
@@ -41,10 +43,14 @@
 <script src="{{ '/assets/js/jquery.shuffle.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/jquery.smooth-scroll.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/jquery.back-to-top.min.js' | relative_url }}" defer></script>
-
 <script src="{{ '/assets/js/global.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/parallax.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/shuffle.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/magnific-popup.min.js' | relative_url }}" defer></script>
+
+<script>
+    var webpMachine = new webpHero.WebpMachine();
+    webpMachine.polyfillDocument();
+</script>
 </body>
 </html>

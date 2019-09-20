@@ -23,7 +23,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
-    "merge-stream": "^2.0.0"
+    "merge-stream": "^2.0.0",
+    "webp-hero": "^0.0.0-dev.24"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
@@ -38,5 +39,11 @@
     "preinstall": "bundle install",
     "start": "bundle exec gulp",
     "test": "bundle exec gulp test"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }

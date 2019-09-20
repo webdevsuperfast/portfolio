@@ -12,6 +12,8 @@ var gulp = require('gulp'),
     cssnano = require('cssnano'),
     changed = require('gulp-changed'),
     critical = require('critical'),
+    merge = require('merge-stream'),
+    webp = require('gulp-webp'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [
@@ -51,6 +53,17 @@ var paths = {
         ],
         dest: 'assets/js'
     },
+    images: {
+        feature: [
+            './develop/images/*.{jpg,png}',
+            '!./develop/images/school-for-selling.jpg',
+            '!./develop/images/*.svg',
+            '!./develop/images/thumbs/*.{jpg,png}'
+        ],
+        thumbnail: [
+            './develop/images/thumbs/*'
+        ]
+    },
     sources: {
         src: [
             'node_modules/stream/assets/include/scss/**/**'
@@ -88,6 +101,22 @@ function criticalCss() {
         height: 480,
         minify: true
     });
+}
+
+function images() {
+    var featured = gulp.src(paths.images.feature)
+        .pipe(webp())
+        .pipe(gulp.dest('./assets/images/'));
+    var thumbnail = gulp.src(paths.images.thumbnail)
+        .pipe(webp())
+        .pipe(gulp.dest('./assets/images/thumbs'));
+    var svg = gulp.src([
+        './develop/images/*.{svg}',
+        './develop/images/school-for-selling.jpg'
+    ])
+        .pipe(gulp.dest('./assets/images'));
+
+    return merge(featured, thumbnail, svg);
 }
 
 function js() {
@@ -145,5 +174,7 @@ function watch() {
     ],
     gulp.series(jekyllBuild, browserSyncReload));
 }
+
+gulp.task('images', images);
 
 gulp.task('default', gulp.parallel(jekyllBuild, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));

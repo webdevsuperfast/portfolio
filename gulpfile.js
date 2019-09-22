@@ -36,13 +36,12 @@ var paths = {
         src: [
             'node_modules/stream/assets/vendors/bootstrap/js/bootstrap.js',
             'node_modules/stream/assets/js/global.js',
-            'node_modules/stream/assets/vendors/magnific-popup/jquery.magnific-popup.js',
             'node_modules/lazysizes/lazysizes.js',
             'node_modules/stream/assets/vendors/jquery.parallax.js',
             'node_modules/stream/assets/js/vendors/parallax.js',
-            'node_modules/stream/assets/js/vendors/shuffle.js',
-            'node_modules/stream/assets/js/vendors/magnific-popup.js',
             'node_modules/webp-hero/dist-cjs/polyfills.js',
+            'node_modules/mixitup/dist/mixitup.js',
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             'node_modules/webp-hero/dist-cjs/webp-hero.bundle.js'
         ],
         minified: [
@@ -51,7 +50,6 @@ var paths = {
             'node_modules/stream/assets/vendors/jquery.migrate.min.js',
             'node_modules/stream/assets/vendors/jquery.back-to-top.min.js',
             'node_modules/stream/assets/vendors/jquery.smooth-scroll.min.js',
-            'node_modules/stream/assets/vendors/shuffle/jquery.shuffle.min.js'
         ],
         dest: 'assets/js'
     },

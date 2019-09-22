@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "lazysizes": "^5.1.1",
+    "magnific-popup": "^1.1.0",
+    "mixitup": "^3.3.1",
     "stream": "https://github.com/htmlstreamofficial/stream-ui-kit"
   },
   "bugs": {

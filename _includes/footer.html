@@ -41,17 +41,11 @@
 <script src="{{ '/assets/js/jquery.back-to-top.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/global.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/parallax.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/polyfills.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/webp-hero.bundle.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/lazysizes.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}" defer></script>
 
 <script>
-    window.addEventListener('DOMContentLoaded', function() {
-        var webpMachine = new webpHero.WebpMachine();
-        webpMachine.polyfillDocument();
-    });
     (function($){
         var containerEl = document.querySelector('.collections');
         var mixer = mixitup(containerEl, {

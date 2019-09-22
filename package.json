@@ -24,8 +24,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
-    "merge-stream": "^2.0.0",
-    "webp-hero": "^0.0.0-dev.24"
+    "merge-stream": "^2.0.0"
   },
   "dependencies": {
     "lazysizes": "^5.1.1",

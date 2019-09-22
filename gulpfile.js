@@ -39,10 +39,8 @@ var paths = {
             'node_modules/lazysizes/lazysizes.js',
             'node_modules/stream/assets/vendors/jquery.parallax.js',
             'node_modules/stream/assets/js/vendors/parallax.js',
-            'node_modules/webp-hero/dist-cjs/polyfills.js',
             'node_modules/mixitup/dist/mixitup.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            'node_modules/webp-hero/dist-cjs/webp-hero.bundle.js'
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
         ],
         minified: [
             'node_modules/stream/assets/vendors/popper.min.js',
@@ -189,6 +187,6 @@ function watch() {
     gulp.series(jekyllBuild, browserSyncReload));
 }
 
-// gulp.task('images', images);
+gulp.task('images', images);
 
-gulp.task('default', gulp.parallel(jekyllBuild, fonts, style, criticalCss, images, gulp.series(js, jsMinified), browserSyncServe, watch));
+gulp.task('default', gulp.parallel(jekyllBuild, fonts, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));

@@ -4,15 +4,15 @@
             <h2 class="h1">My Portfolio</h2>
             <p class="h5">I design and develop themes and plugins that make people's lives easy and simple.</p>
         </header>
-        <ul class="js-shuffle-controls u-portfolio-controls text-center mb-5">
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="all" class="active">All</a></li>
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="wordpress">PSD to WordPress</a></li>
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="html">PSD to HTML</a></li>
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="woocommerce">PSD to WooCommerce</a></li>
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="design">Web Design</a></li>
-            <li class="u-portfolio-controls__item"><a href="#!" data-group="plugin">WordPress Plugins</a></li>
+        <ul class="u-portfolio-controls text-center mb-5">
+            <li class="u-portfolio-controls__item"><a class="filter active" data-filter="all">All</a></li>
+            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".wordpress">PSD to WordPress</a></li>
+            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".html">PSD to HTML</a></li>
+            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".woocommerce">PSD to WooCommerce</a></li>
+            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".design">Web Design</a></li>
+            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".plugin">WordPress Plugins</a></li>
         </ul>
-        <div class="js-shuffle u-portfolio row no-gutters mb-6">
+        <div class="collections gallery u-portfolio row no-gutters mb-6">
             {% for portfolio in site.data.portfolio %}
             {%- assign categories = portfolio.category -%}
             {% capture cat %}
@@ -36,13 +36,13 @@
                     [{{ portfolio.category | jsonify }}]
                 {%- endif -%}
             {%- endcapture -%}
-            <figure class="col-sm-6 col-md-4 u-portfolio__item {{portfolio.category | join: ' '}}" data-groups='{{group}}'>
-                <img class="u-portfolio__image" src="{{ '/assets/images/thumbs/' | relative_url }}{{portfolio.thumbnail}}" alt="{{portfolio.title}}">
+            <figure class="mix col-sm-6 col-md-4 u-portfolio__item {{ portfolio.category | join: ' ' }}">
+                <img class="u-portfolio__image lazyload" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.thumbnail }}" alt="{{ portfolio.title }}">
                 <figcaption class="u-portfolio__info">
                     <h6 class="mb-0">{{ portfolio.title }}</h6>
                     <small class="d-block">{{ cat }}</small>
                 </figcaption>
-                <a class="js-popup-image u-portfolio__zoom" href="{{ '/assets/images/' | relative_url }}{{portfolio.image}}">Zoom</a>
+                <a class="u-portfolio__zoom" href="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" title="{{ portfolio.title }}" data-url="{{ portfolio.website }}">Zoom</a>
             </figure>
             {% endfor %}
         </div>

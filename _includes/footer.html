@@ -41,9 +41,20 @@
 <script src="{{ '/assets/js/jquery.back-to-top.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/global.min.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/parallax.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/lazysizes.min.js' | relative_url }}" defer></script>
+<!-- <script src="{{ '/assets/js/lazysizes.min.js' | relative_url }}" defer></script> -->
 <script src="{{ '/assets/js/mixitup.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/jquery.magnific-popup.min.js' | relative_url }}" defer></script>
+<script>
+    // Set the options to make LazyLoad self-initialize	
+    window.lazyLoadOptions = {	
+        elements_selector: ".lazyload"	
+    };
+    // Listen to the initialization event and get the instance of LazyLoad	
+    window.addEventListener('LazyLoad::Initialized', function (event) {	
+        window.lazyLoadInstance = event.detail.instance;	
+    }, false);
+</script>
+<script src="{{ '/assets/js/lazyload.min.js' | relative_url }}" async></script>
 
 <script>
     (function($){

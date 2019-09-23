@@ -36,11 +36,11 @@ var paths = {
         src: [
             'node_modules/stream/assets/vendors/bootstrap/js/bootstrap.js',
             'node_modules/stream/assets/js/global.js',
-            'node_modules/lazysizes/lazysizes.js',
             'node_modules/stream/assets/vendors/jquery.parallax.js',
             'node_modules/stream/assets/js/vendors/parallax.js',
             'node_modules/mixitup/dist/mixitup.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+            'node_modules/vanilla-lazyload/dist/lazyload.js'
         ],
         minified: [
             'node_modules/stream/assets/vendors/popper.min.js',

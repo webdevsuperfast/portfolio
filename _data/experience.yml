@@ -1,0 +1,67 @@
+- company: Freelance
+  position: Web Developer
+  date: 
+    - start: October 2017
+      end: Present
+  summary:
+    - Convert PSD/Sketch/Illustrator/HTML to responsive WordPress themes.
+    - Troubleshoot WordPress theme and plugin issues.
+    - Backup WordPress sites using SSH, ManageWP.
+    - Update WordPress themes and plugins.
+    - Performed Pagespeed Optimization.
+
+- company: Kala Digital
+  position: Fullstack Developer
+  date: 
+    - start: March 2018
+      end: February 2019
+  summary:
+    - Converted PSD/HTML to responsive WordPress themes.
+    - Troubleshoot WordPress theme and plugin issues.
+    - Backup WordPress sites using SSH, ManageWP.
+    - Updated WordPress themes and plugins using ManageWP.
+    - Maintained GoDaddy and Cloudways Server.
+    - Managed website settings through CloudFlare and GoDaddy.
+    - Setup client emails and email addresses.
+    - Performed Pagespeed Optimization.
+    - Performed site audit using AHrefs, SEMRush and SerpFox.
+
+- company: RecommendWP
+  position: Senior Web Developer
+  date:
+    - start: December 2015
+      end: October 2017
+  summary:
+    - Converted PSD/Sketch/Illustrator/HTML to responsive WordPress themes.
+    - Maintained web development servers.
+    - Created bash script to backup/maintain sites through SSH.
+    - Setup cron jobs to backup sites weekly or monthly to Amazon S3.
+    - Designed, developed and updated in-house themes and plugins.
+    - Troubleshoot client issues with themes and plugins.
+    - Performed Pagespeed optimization.
+    - Developed and co-designed company website.
+
+- company: SuperFastBusiness
+  position: Senior Web Developer
+  date:
+    - start: May 2012
+      end: December 2015
+  summary:
+    - Converted PSD/Illustrator/HTML to responsive WordPress themes.
+    - Helped maintain web development servers.
+    - Created bash script to backup/maintain sites through SSH.
+    - Setup cron jobs for weekly, monthly backups.
+    - Troubleshoot client issues varying from themes, plugins and WordPress core.
+    - Performed website optimization.
+    - Designed, developed and updated in-house themes and plugins.
+
+- company: AMA Computer College
+  position: Assistant Instructor I
+  date:
+    - start: June 2011
+      end: April 2012
+  summary:
+    - Taught Information Technology-based courses.
+    - Mentored Systems and Analysis Design, IT Capstonestudents.
+    - Panelled IT Capstone students’ defense.
+    - Designed School Yearbook.

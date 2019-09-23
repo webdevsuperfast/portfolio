@@ -16,27 +16,12 @@
                 </button>
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo">
-                    <!-- <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
-                        <li class="nav-item mr-4 mb-2 mb-lg-0">
-                        <a class="nav-link active" href="/">Rotsen Mark Acob</a>
-                        </li>
-                    </ul> -->
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <!-- <li class="nav-item mr-4 mb-2 mb-lg-0">
-                          <a class="nav-link" href="">Home</a>
-                        </li> -->
-                        <li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="#js-scroll-to-about">About</a>
-                        </li>
-                        <li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="#js-scroll-to-skills">Skills</a>
-                        </li>
-                        <li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="#js-scroll-to-portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="#js-scroll-to-testimonials">Testimonials</a>
-                        </li>
+                        {%- for nav in site.data.navigation -%}
+                            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                                <a class="nav-link" href="{{ nav.href }}">{{ nav.title }}</a>
+                            </li>
+                        {%- endfor -%}
                     </ul>
                     <div>
                         <a class="btn btn-primary" href="#js-scroll-to-contact">

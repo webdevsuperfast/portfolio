@@ -1,0 +1,14 @@
+- title: 'About'
+  href: '#js-scroll-to-about'
+
+- title: 'Experience'
+  href: '#js-scroll-to-experience'
+
+- title: 'Skills'
+  href: '#js-scroll-to-skills'
+
+- title: 'Portfolio'
+  href: '#js-scroll-to-portfolio'
+
+- title: 'Testimonials'
+  href: '#js-scroll-to-testimonials'

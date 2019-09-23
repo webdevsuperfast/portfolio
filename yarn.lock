@@ -7252,11 +7252,6 @@ vinyl@^2.0.0, vinyl@^2.2.0:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
-webp-hero@^0.0.0-dev.24:
-  version "0.0.0-dev.24"
-  resolved "https://registry.yarnpkg.com/webp-hero/-/webp-hero-0.0.0-dev.24.tgz#5eb6e96fb2a6c4f104896becac9b39e032df5215"
-  integrity sha512-3XG47dRMV36RFwfYLUynOiKDXuqXfQ3dz7yvqGH5VplldV0NvngQzF0qBsZ3vRQwrigekRLeX/NdNwsaGfSnPQ==
-
 which-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/which-module/-/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"

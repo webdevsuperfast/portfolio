@@ -77,10 +77,22 @@
 			position: absolute;
 			left: 50%;
 			margin-left: -40px;
-			top: -7px;
+			@include media-breakpoint-up(lg){
+				top: -7px;
+			}
 		}
 		& > .timeline-panel {
 
+		}
+	}
+}
+
+// Programming Languages
+.programming-languages {
+	li {
+		@extend .text-muted;
+		&:hover {
+			@extend .text-primary;
 		}
 	}
 }

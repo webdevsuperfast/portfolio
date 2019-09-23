@@ -71,8 +71,7 @@ var paths = {
 };
 
 function jekyllBuild() {
-    return cp.spawn( jekyll, ['build'], {stdio: 'inherit'})
-    // return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+    return cp.spawn( jekyll, ['build'], { stdio: 'inherit' });
 }
 
 function style() {
@@ -83,7 +82,7 @@ function style() {
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.stream())
+        .pipe(browserSync.reload({ stream: true }))
         .pipe(notify({ 
             'message': 'Styles task complete' 
         }));
@@ -138,7 +137,7 @@ function js() {
             .pipe(rename({suffix: '.min'}))
     }))
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.reload({ stream: true }))
     .pipe(notify({ 
         'message': 'Scripts task complete' 
     }));
@@ -148,22 +147,19 @@ function jsMinified() {
     return gulp.src(paths.scripts.minified)
         .pipe(changed(paths.scripts.dest))
         .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(browserSync.stream())
+        .pipe(browserSync.reload({ stream: true }))
         .pipe(notify({
             'message': 'Minified scripts task complete' 
         }));
 }
 
-function browserSyncServe(done) {
+function browserSyncServe() {
     browserSync.init({
-        injectChanges: true,
         server: {
             baseDir: './_site/'
         },
         port: 3000
     });
-    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
-    done();
 }
 
 function browserSyncReload(done) {
@@ -172,8 +168,7 @@ function browserSyncReload(done) {
 }
 
 function watch() {
-    gulp.watch(['assets/scss/style.scss', 'assets/scss/**/**/*.scss'], style).on('change', browserSync.reload)
-    gulp.watch(paths.scripts.src, gulp.series(js, jsMinified))
+    gulp.watch(['assets/scss/style.scss', 'assets/scss/**/**/*.scss'], style);
     gulp.watch(
     [
         '*.html', 
@@ -182,7 +177,9 @@ function watch() {
         '_portfolio/*', 
         '_includes/*',
         '_data/*',
-        'assets/*'
+        'assets/css/*.css',
+        'assets/js/*.js',
+        'assets/images/*.*'
     ],
     gulp.series(jekyllBuild, browserSyncReload));
 }

@@ -100,26 +100,6 @@ function criticalCss() {
     });
 }
 
-function images() {
-    var featured = gulp.src(paths.images.feature)
-        .pipe(changed('./assets/images'))
-        .pipe(webp())
-        .pipe(gulp.dest('./assets/images/'));
-    var thumbnail = gulp.src(paths.images.thumbnail)
-        .pipe(changed('./assets/images/thumbs'))
-        .pipe(webp())
-        .pipe(gulp.dest('./assets/images/thumbs'));
-    var svg = gulp.src([
-        './develop/images/*.{svg}',
-        './develop/images/school-for-selling.jpg',
-        './develop/images/carlos-muza-84523-unsplash.jpg'
-    ])
-        .pipe(changed('./assets/images'))
-        .pipe(gulp.dest('./assets/images'));
-
-    return merge(featured, thumbnail, svg);
-}
-
 function fonts() {
     var fontAwesome = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
         .pipe(changed('assets/fonts/font-awesome'))
@@ -183,7 +163,5 @@ function watch() {
     ],
     gulp.series(jekyllBuild, browserSyncReload));
 }
-
-gulp.task('images', images);
 
 gulp.task('default', gulp.parallel(jekyllBuild, fonts, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));

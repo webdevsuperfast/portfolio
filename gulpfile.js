@@ -46,8 +46,7 @@ var paths = {
             'node_modules/stream/assets/vendors/popper.min.js',
             'node_modules/stream/assets/vendors/jquery.min.js',
             'node_modules/stream/assets/vendors/jquery.migrate.min.js',
-            'node_modules/stream/assets/vendors/jquery.back-to-top.min.js',
-            'node_modules/stream/assets/vendors/jquery.smooth-scroll.min.js',
+            'node_modules/stream/assets/vendors/jquery.back-to-top.min.js'
         ],
         dest: 'assets/js'
     },

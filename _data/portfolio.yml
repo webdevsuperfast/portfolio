@@ -26,6 +26,15 @@
   thumbnail: betty-rocker.jpg
   category: wordpress
 
+- title: Genesis Boilerplate
+  client: Rotsen Acob
+  website: http://boilerplate.rotsenacob.com
+  image: boilerplate.jpg
+  thumbnail: boilerplate.jpg
+  category: 
+    - design
+    - wordpress
+
 - title: Booming Business
   client: RecommendWP
   website: https://boomingbusiness.com
@@ -40,6 +49,14 @@
   thumbnail: bootstrap-for-genesis.jpg
   category: 
     - wordpress 
+    - design
+
+- title: Business Services Website
+  client: RecommendWP
+  website:
+  image: business-services-website.jpg
+  thumbnail: business-services-website.jpg
+  category:
     - design
 
 - title: Cleaning Marketer
@@ -125,6 +142,15 @@
   category: 
     - wordpress 
     - woocommerce
+
+- title: MyDevHouse
+  client: MyDevHouse
+  website: https://mydevhouse.dev
+  image: mydevhouse.jpg
+  thumbnail: mydevhouse.jpg
+  category:
+    - wordpress
+    - design
 
 - title: Persona
   client: SuperFastBusiness

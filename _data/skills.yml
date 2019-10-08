@@ -28,5 +28,5 @@
 - skill: Operating Systems(MacOS, Linux, Windows)
   value: 75
 
-#- skill: ReactJS
-#  value: 50
+- skill: JavaScript Framework(ReactJS, VueJS)
+  value: 70

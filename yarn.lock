@@ -409,17 +409,17 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^9.6.4:
-  version "9.6.4"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.6.4.tgz#e6453be47af316b2923eaeaed87860f52ad4b7eb"
-  integrity sha512-Koz2cJU9dKOxG8P1f8uVaBntOv9lP4yz9ffWvWaicv9gHBPhpQB22nGijwd8gqW9CNT+UdkbQOQNLVI8jN1ZfQ==
+autoprefixer@^9.7.0:
+  version "9.7.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.0.tgz#905ec19e50f04545fe9ff131182cc9ab25246901"
+  integrity sha512-j2IRvaCfrUxIiZun9ba4mhJ2omhw4OY88/yVzLO+lHhGBumAAK72PgM6gkbSN8iregPOn1ZlxGkmZh2CQ7X4AQ==
   dependencies:
-    browserslist "^4.7.0"
-    caniuse-lite "^1.0.30000998"
+    browserslist "^4.7.2"
+    caniuse-lite "^1.0.30001004"
     chalk "^2.4.2"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^7.0.18"
+    postcss "^7.0.19"
     postcss-value-parser "^4.0.2"
 
 aws-sign2@~0.7.0:
@@ -696,7 +696,7 @@ browser-sync@^2.26.7:
     ua-parser-js "0.7.17"
     yargs "6.4.0"
 
-browserslist@^4.0.0, browserslist@^4.7.0:
+browserslist@^4.0.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.7.0.tgz#9ee89225ffc07db03409f2fee524dc8227458a17"
   integrity sha512-9rGNDtnj+HaahxiVV38Gn8n8Lr8REKsel68v1sPFfIGEK6uSXTY3h9acgiT1dZVtOOUtifo/Dn8daDQ5dUgVsA==
@@ -704,6 +704,15 @@ browserslist@^4.0.0, browserslist@^4.7.0:
     caniuse-lite "^1.0.30000989"
     electron-to-chromium "^1.3.247"
     node-releases "^1.1.29"
+
+browserslist@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.7.2.tgz#1bb984531a476b5d389cedecb195b2cd69fb1348"
+  integrity sha512-uZavT/gZXJd2UTi9Ov7/Z340WOSQ3+m1iBVRUknf+okKxonL9P83S3ctiBDtuRmRu8PiCHjqyueqQ9HYlJhxiw==
+  dependencies:
+    caniuse-lite "^1.0.30001004"
+    electron-to-chromium "^1.3.295"
+    node-releases "^1.1.38"
 
 bs-recipes@1.3.4:
   version "1.3.4"
@@ -865,10 +874,10 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000989:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000989.tgz#b9193e293ccf7e4426c5245134b8f2a56c0ac4b9"
   integrity sha512-vrMcvSuMz16YY6GSVZ0dWDTJP8jqk3iFQ/Aq5iqblPwxSVVZI+zxDyTX0VPqtQsDnfdrBDcsmhgTEOh5R8Lbpw==
 
-caniuse-lite@^1.0.30000998:
-  version "1.0.30000999"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000999.tgz#427253a69ad7bea4aa8d8345687b8eec51ca0e43"
-  integrity sha512-1CUyKyecPeksKwXZvYw0tEoaMCo/RwBlXmEtN5vVnabvO0KPd9RQLcaAuR9/1F+KDMv6esmOFWlsXuzDk+8rxg==
+caniuse-lite@^1.0.30001004:
+  version "1.0.30001005"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001005.tgz#823054210be638c725521edcb869435dae46728d"
+  integrity sha512-g78miZm1Z5njjYR216a5812oPiLgV1ssndgGxITHWUopmjUrCswMisA0a2kSB7a0vZRox6JOKhM51+efmYN8Mg==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -1906,6 +1915,11 @@ electron-to-chromium@^1.3.247:
   version "1.3.253"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.253.tgz#bc3b2c94c2a109c08d37b04f526dc05fdabcbb5b"
   integrity sha512-LAwFRWViiiCSxQ2Lj3mnyEP8atkpAoHSPUnkFoy4mNabbnPHxtfseWvPCGGhewjHQI+ky/V4LdlTyyI0d3YPXA==
+
+electron-to-chromium@^1.3.295:
+  version "1.3.296"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.296.tgz#a1d4322d742317945285d3ba88966561b67f3ac8"
+  integrity sha512-s5hv+TSJSVRsxH190De66YHb50pBGTweT9XGWYu/LMR20KX6TsjFzObo36CjVAzM+PUeeKSBRtm/mISlCzeojQ==
 
 encodeurl@~1.0.1, encodeurl@~1.0.2:
   version "1.0.2"
@@ -4579,6 +4593,13 @@ node-releases@^1.1.29:
   dependencies:
     semver "^5.3.0"
 
+node-releases@^1.1.38:
+  version "1.1.39"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.39.tgz#c1011f30343aff5b633153b10ff691d278d08e8d"
+  integrity sha512-8MRC/ErwNCHOlAFycy9OPca46fQYUjbJRDcZTHVWIGXIjYLM73k70vv3WkYutVnM4cCo4hE0MqBVVZjP6vjISA==
+  dependencies:
+    semver "^6.3.0"
+
 node-sass@^4.8.3:
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.12.0.tgz#0914f531932380114a30cc5fa4fa63233a25f017"
@@ -5556,10 +5577,19 @@ postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.2, postcss@^7.0.5:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.5:
   version "7.0.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.18.tgz#4b9cda95ae6c069c67a4d933029eddd4838ac233"
   integrity sha512-/7g1QXXgegpF+9GJj4iN7ChGF40sYuGYJ8WZu8DZWnmhQ/G36hfdk3q9LBJmoK+lZ+yzZ5KYpOoxq7LF1BxE8g==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@^7.0.19:
+  version "7.0.21"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.21.tgz#06bb07824c19c2021c5d056d5b10c35b989f7e17"
+  integrity sha512-uIFtJElxJo29QC753JzhidoAhvp/e/Exezkdhfmt8AymWT6/5B7W1WmponYWkHk2eg6sONyTch0A3nkMPun3SQ==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -6119,7 +6149,7 @@ semver-truncate@^1.1.2:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
 
-semver@^6.0.0:
+semver@^6.0.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
@@ -7174,10 +7204,10 @@ value-or-function@^3.0.0:
   resolved "https://registry.yarnpkg.com/value-or-function/-/value-or-function-3.0.0.tgz#1c243a50b595c1be54a754bfece8563b9ff8d813"
   integrity sha1-HCQ6ULWVwb5Up1S/7OhWO5/42BM=
 
-vanilla-lazyload@^12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-12.1.0.tgz#b38b7bd6afd06b03287d0da633f5f87ff0256ce9"
-  integrity sha512-qZGPmpuBmNQXOzmF3ufvuU/MbM9a6XToGoQi5G4KmYFKD6ErUO3HTq3aBBcMIFZqqRJaz46yc6ax5syJTXjDJA==
+vanilla-lazyload@^12.2.0:
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-12.2.0.tgz#de4eb963869cde57847f55fafedf9dd77bc3b560"
+  integrity sha512-Dt3YjM97fLCFyM67EeSMz9i24ai/rf/Dd77ubCLZcF7vdlJG8VV3e0GbVXtyOjROAh+F3+aA6PF/5Sxvq3HsMQ==
 
 vendors@^1.0.0:
   version "1.0.3"

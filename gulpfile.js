@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     critical = require('critical'),
     merge = require('merge-stream'),
     webp = require('gulp-webp'),
+    Fiber = require('fibers'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [
@@ -26,6 +27,8 @@ var plugins = [
         }]
     })
 ]
+
+// sass.compiler = require('sass');
 
 var paths = {
     styles: {
@@ -76,7 +79,7 @@ function jekyllBuild() {
 function style() {
     return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
-        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))

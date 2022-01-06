@@ -27,7 +27,6 @@
     "merge-stream": "^2.0.0"
   },
   "dependencies": {
-    "fibers": "^5.0.0",
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
     "postcss": "^8.3.6",

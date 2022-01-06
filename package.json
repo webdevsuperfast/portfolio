@@ -30,7 +30,7 @@
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
     "postcss": "^8.3.6",
-    "sass": "^1.41.1",
+    "sass": "^1.46.0",
     "stream": "https://github.com/htmlstreamofficial/stream-ui-kit",
     "vanilla-lazyload": "^17.4.0"
   },

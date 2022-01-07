@@ -1,6 +1,8 @@
 const { src } = require('gulp');
+const tailwindcss = require('tailwindcss');
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
+    options = require('./config.js'),
     sass = require('gulp-sass')(require('sass')),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify'),
@@ -19,6 +21,7 @@ var gulp = require('gulp'),
     jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var plugins = [
+    tailwindcss(options.config.tailwind),
     autoprefixer,
     cssnano({
         preset: ['default', {
@@ -28,8 +31,6 @@ var plugins = [
         }]
     })
 ]
-
-// sass.compiler = require('sass');
 
 var styles,
     scripts,
@@ -79,13 +80,13 @@ function jekyllBuild() {
 }
 
 function style() {
-    return gulp.src(styles.src)
-        .pipe(changed(styles.dest))
+    return gulp.src(options.paths.styles.src)
+        .pipe(changed(options.paths.styles.dest))
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
-        .pipe(gulp.dest(styles.dest))
+        .pipe(gulp.dest(options.paths.styles.dest))
         .pipe(browserSync.reload({ stream: true }))
         .pipe(notify({ 
             'message': 'Styles task complete' 
@@ -106,37 +107,18 @@ function criticalCss() {
     });
 }
 
-function fonts() {
-    var fontAwesome = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
-        .pipe(changed('assets/fonts/font-awesome'))
-        .pipe(gulp.dest('assets/fonts/font-awesome'));
-    
-    return merge(fontAwesome);
-
-}
-
 function js() {
-    return gulp.src(scripts.src)
+    return gulp.src(options.paths.scripts.src)
     .pipe(foreach(function(stream, file){
         return stream
             .pipe(uglify())
             .pipe(rename({suffix: '.min'}))
     }))
-    .pipe(gulp.dest(scripts.dest))
+    .pipe(gulp.dest(options.paths.scripts.dest))
     .pipe(browserSync.reload({ stream: true }))
     .pipe(notify({ 
         'message': 'Scripts task complete' 
     }));
-}
-
-function jsMinified() {
-    return gulp.src(scripts.minified)
-        .pipe(changed(scripts.dest))
-        .pipe(gulp.dest(scripts.dest))
-        .pipe(browserSync.reload({ stream: true }))
-        .pipe(notify({
-            'message': 'Minified scripts task complete' 
-        }));
 }
 
 function browserSyncServe() {
@@ -170,4 +152,4 @@ function watch() {
     gulp.series(jekyllBuild, browserSyncReload));
 }
 
-gulp.task('default', gulp.parallel(jekyllBuild, fonts, style, criticalCss, gulp.series(js, jsMinified), browserSyncServe, watch));
+gulp.task('default', gulp.parallel(jekyllBuild, style, criticalCss, gulp.series(js), browserSyncServe, watch));

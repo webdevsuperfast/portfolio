@@ -5,8 +5,8 @@ module.exports = {
   },
   paths: {
     styles: {
-      src: 'assets/scss/style.scss',
-      dest: 'assets/css'
+      src: './assets/scss',
+      dest: './assets/css'
     },
     scripts: {
       src: [
@@ -17,7 +17,7 @@ module.exports = {
       minified: [
         
       ],
-      dest: 'assets/js'
+      dest: './assets/js'
     },
     images: {
       feature: [
@@ -34,7 +34,7 @@ module.exports = {
       src: [
         
       ],
-      dest: 'assets/scss/sources/'
+      dest: './assets/scss/sources/'
     }
   }
 }

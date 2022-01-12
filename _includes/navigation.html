@@ -1,14 +1,24 @@
-<header class="flex-none relative z-50 text-sm leading-6 font-medium  text-gray-200 pt-5">
-    <nav class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center  flex-wrap sm:flex-nowrap">
-                <a class="flex-none text-white" href="/">
-                    <img src="{{ 'assets/images/logo.svg' }}" alt="Rotsen Mark Acob" width="50">
-                </a>
-    
-                <div class="w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto flex items-center">
-                    {%- for nav in site.data.navigation -%}
-                        <a class="" href="{{ nav.href }}">{{ nav.title }}</a>
-                    {%- endfor -%}
-                </div>
-            </div>
-    </nav>
+<header class="flex-none z-50 text-sm leading-6 font-medium text-gray-100 pt-24">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center flex-wrap sm:flex-nowrap">
+      <a class="flex-none text-white" href="/">
+        <img src="{{ 'assets/images/logo.svg' }}" alt="Rotsen Mark Acob" width="50">
+      </a>
+
+      <div class="w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto flex items-center space-x-4">
+        <!-- {%- for nav in site.data.navigation -%}
+          <a class="" href="{{ nav.href }}">{{ nav.title }}</a>
+        {%- endfor -%} -->
+        <button>
+          <svg width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" y1="3" x2="42" y2="3" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <line x1="13" y1="18" x2="42" y2="18" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <line x1="23" y1="33" x2="42" y2="33" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header><!-- End Header -->
+
+<main class="site-content grow flex items-center">

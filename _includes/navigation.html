@@ -8,7 +8,7 @@
       <a class="flex-none text-white grow" href="/">
         <svg width="50" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M44.444 16.667A5.556 5.556 0 0 0 50 11.11V5.556A5.556 5.556 0 0 0 44.444 0H0V44.444A5.556 5.556 0 0 0 5.556 50h5.555a5.556 5.556 0 0 0 5.556-5.556V22.222a5.556 5.556 0 0 1 5.555-5.555h22.222ZM50 38.889a5.556 5.556 0 0 0-5.556-5.556H38.89a5.556 5.556 0 0 0-5.556 5.556v5.555A5.556 5.556 0 0 0 38.89 50H50V38.889Z" fill="#fff"/></svg>
       </a>
-      <div class="block sm:hidden mobile-menu">
+      <div class="block sm:hidden mobile-menu relative">
         <button
           x-on:click="navOpen = ! navOpen"
           class="flex items-center space-x-2 focus:outline-none block sm:hidden">
@@ -31,8 +31,7 @@
           </div>
         </button>
       </div>
-      <div x-bind:class="navOpen ? '' : ''" 
-      class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto sm:flex items-center space-x-6 uppercase">
+      <div class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto sm:flex items-center space-x-6 uppercase">
         {%- for nav in site.data.navigation -%}
           {% if forloop.last %}
             <a class="block sm:inline-block uppercase text-md lg:text-2xl hover:bg-transparent hover:text-gray-200 hover:shadow-sm hover:shadow-rose-900 transition-colors border-2 border-rose-900 bg-rose-900 px-3 py-1 lg:px-10 lg:py-3 rounded-lg" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
@@ -41,6 +40,15 @@
           {% endif %}
         {%- endfor -%}
       </div>
+    </div>
+    <div x-show="navOpen" x-transition class="w-screen uppercase absolute right-0 bg-rose-900 py-3 rounded-3xl top-24 text-center">
+      {%- for nav in site.data.navigation -%}
+        {% if forloop.last %}
+          <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 py-3 px-5 transition-colors" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
+        {% else %}
+          <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 transition-colors  py-3 px-5" href="#{{ nav.href }}">{{ nav.title }}</a>
+        {% endif %}
+      {%- endfor -%}
     </div>
   </nav>
 </header><!-- End Header -->

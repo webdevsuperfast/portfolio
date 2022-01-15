@@ -4,9 +4,6 @@
 - name: Web Design
   slug: design
 
-- name: VueJS
-  slug: vue
-
 - name: WordPress Plugin
   slug: plugin
 

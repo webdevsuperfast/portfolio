@@ -52,6 +52,7 @@
     "not dead"
   ],
   "dependencies": {
-    "alpinejs": "^3.8.0"
+    "alpinejs": "^3.8.0",
+    "glightbox": "^3.1.0"
   }
 }

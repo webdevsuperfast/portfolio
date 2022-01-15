@@ -2968,6 +2968,11 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
+glightbox@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/glightbox/-/glightbox-3.1.0.tgz#cd78d72978271e19711163367d7730036ef6d6dd"
+  integrity sha512-QVWU40Eao1+1yH7pb/knwbte0qSXxn2Rfrs7H30G/2+9fXW52woCTBA4kKLtoEHPZxXI+JECj+GBqtRGzfBILQ==
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"

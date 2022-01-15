@@ -14,6 +14,10 @@ const options = require('./config.js'),
   critical = require('critical'),
   merge = require('merge-stream'),
   webp = require('gulp-webp'),
+  rollup = require('gulp-better-rollup'),
+  babel = require('rollup-plugin-babel'),
+  resolve = require('rollup-plugin-node-resolve'),
+  commonjs = require('rollup-plugin-commonjs'),
   jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 function jekyllBuild() {
@@ -53,12 +57,14 @@ function criticalCss() {
 }
 
 function js() {
-  return src(options.paths.scripts.src)
-    .pipe(foreach(function(stream, file){
-      return stream
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-    }))
+  return src(`${options.paths.scripts.src}/*.js`)
+    .pipe(rollup({ 
+      plugins: [
+        babel(), 
+        resolve(), 
+        commonjs()
+      ]},
+    'umd'))
     .pipe(dest(options.paths.scripts.dest))
     .pipe(browserSync.reload({ stream: true }))
     .pipe(notify({ 
@@ -82,8 +88,7 @@ function browserSyncReload(done) {
 
 function watchFiles() {
   watch(`${options.paths.styles.src}/**/*.scss`, series(style, browserSyncReload));
-  watch(`${options.paths.scripts.src}/**/*.js`, series(js, browserSyncReload));
-  watch(`${options.paths.fonts.dest}/**/*.{woff,eot,svg,ttf,otf}`, series(fonts, browserSyncReload));
+  watch(`${options.paths.scripts.src}`, series(js, browserSyncReload));
   watch([options.config.tailwind, `${options.paths.styles.src}/**/*.scss`], series(style, browserSyncReload));
   watch(
   [
@@ -98,8 +103,9 @@ function watchFiles() {
 }
 
 exports.default = parallel(
+  series(style, criticalCss),
+  js,
   jekyllBuild,
-  series(style, criticalCss, js),
   browserSyncServe,
   watchFiles
 );

@@ -8,11 +8,13 @@
   "license": "GPL-3.0",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.16.7",
     "autoprefixer": "^10.4.1",
     "browser-sync": "^2.27.5",
     "critical": "^4.0.1",
     "cssnano": "^5.0.8",
     "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
     "gulp-changed": "^4.0.3",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^4.0.1",
@@ -26,6 +28,10 @@
     "merge-stream": "^2.0.0",
     "mixitup": "^3.3.1",
     "postcss": "^8.4.5",
+    "rollup": "^2.63.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.46.0",
     "tailwindcss": "^3.0.11",
     "vanilla-lazyload": "^17.4.0"
@@ -44,5 +50,8 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "alpinejs": "^3.8.0"
+  }
 }

@@ -17,7 +17,11 @@ exclude: [
   '_js',
   '.sass-cache',
   'temp',
-  'develop'
+  'develop',
+  'config.js',
+  'postcss.config.js',
+  'tailwind.config.js',
+  'yarn.lock'
 ]
 collections:
   portfolio:

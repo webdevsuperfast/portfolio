@@ -1,4 +1,4 @@
-<header class="flex-none z-50 text-sm leading-6 font-medium text-gray-100 pt-24 fixed w-screen transition-all">
+<header class="flex-none z-50 text-sm leading-6 font-medium text-gray-100 pt-4 fixed w-screen transition-all">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center flex-wrap sm:flex-nowrap">
       <a class="flex-none text-white" href="#js-scroll-to-about">
@@ -8,9 +8,9 @@
       <div class="w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto flex items-center space-x-6 uppercase">
         {%- for nav in site.data.navigation -%}
           {% if forloop.last %}
-            <a class="uppercase sm:text-2xl hover:bg-transparent hover:text-gray-200 hover:shadow-sm hover:shadow-rose-900 transition-colors border-2 border-rose-900 bg-rose-900 px-10 py-3 rounded-lg" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
+            <a class="uppercase text-md lg:text-2xl hover:bg-transparent hover:text-gray-200 hover:shadow-sm hover:shadow-rose-900 transition-colors border-2 border-rose-900 bg-rose-900 px-3 py-1 lg:px-10 lg:py-3 rounded-lg" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
           {% else %}
-            <a class="uppercase sm:text-2xl hover:text-rose-900 transition-colors" href="#{{ nav.href }}">{{ nav.title }}</a>
+            <a class="uppercase text-md lg:text-2xl hover:text-rose-900 transition-colors" href="#{{ nav.href }}">{{ nav.title }}</a>
           {% endif %}
         {%- endfor -%}
         <!-- <button>

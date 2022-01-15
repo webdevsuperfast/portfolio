@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="collections grid grid-cols-6 gap-8 snap-proximity overflow-x-auto relative overflow-y-hidden">
+    <div class="collections grid grid-cols-none sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 snap-proximity overflow-x-auto relative overflow-y-hidden">
       {% for portfolio in site.data.portfolio %}
       {%- assign categories = portfolio.category -%}
         {% capture cat %}
@@ -37,7 +37,7 @@
             {%- endif -%}
         {%- endcapture -%}
         <figure class="mix portfolio w-100 {{ portfolio.category | join: ' ' }}">
-          <img class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px]" src="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" alt="{{ portfolio.title }}" />
+          <img class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" alt="{{ portfolio.title }}" />
           <figcaption class="portfolio-info">
             <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
             <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->

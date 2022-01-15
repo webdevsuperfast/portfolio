@@ -1,6 +1,6 @@
   </main> <!-- End Main -->
   {% if page.layout == "default" %}
-  <footer class="pb-24 w-screen fixed bottom-0">
+  <footer class="pb-4 lg:pb-24 w-screen fixed bottom-0">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative" x-data="{ open: false }" @click.away="open = false">
         <button class="p-5 bg-rose-900 rounded-2xl rounded-br-none absolute right-0 bottom-0 hover:bg-rose-700" x-on:click="open = ! open">
@@ -13,7 +13,7 @@
           {% if site.data.social %}
             <div class="">
               {% for social in site.data.social %}
-                <a class="text-white uppercase block text-center hover:text-gray-200 hover:bg-rose-700 transition-all py-5 px-10 text-xl" href="{{ social.url }}" target="_blank">
+                <a class="text-white uppercase block text-center hover:text-gray-200 hover:bg-rose-700 transition-all py-3 px-5 lg:py-5 lg:px-10 lg:text-xl" href="{{ social.url }}" target="_blank">
                   {{ social.name }}
                 </a>
               {% endfor %}
@@ -62,6 +62,6 @@
 
   });
 </script>
-<!-- <script src="{{ '/assets/js/lazyload.min.js' | relative_url }}" defer></script> -->
+<script src="{{ '/assets/js/lazyload.js' | relative_url }}" defer></script>
 </body>
 </html>

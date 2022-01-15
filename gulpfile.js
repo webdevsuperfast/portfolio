@@ -35,11 +35,7 @@ function style() {
       require('cssnano')
     ]))
     .pipe(rename('app.css'))
-    .pipe(dest(options.paths.styles.dest))
-    .pipe(browserSync.reload({ stream: true }))
-    .pipe(notify({ 
-      'message': 'Styles task complete' 
-    }));
+    .pipe(dest(options.paths.styles.dest));
 }
 
 function criticalCss() {
@@ -65,11 +61,7 @@ function js() {
         commonjs()
       ]},
     'umd'))
-    .pipe(dest(options.paths.scripts.dest))
-    .pipe(browserSync.reload({ stream: true }))
-    .pipe(notify({ 
-        'message': 'Scripts task complete' 
-    }));
+    .pipe(dest(options.paths.scripts.dest));
 }
 
 function browserSyncServe() {

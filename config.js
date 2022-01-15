@@ -9,11 +9,7 @@ module.exports = {
       dest: './assets/css'
     },
     scripts: {
-      src: [
-        'node_modules/mixitup/dist/mixitup.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-        'node_modules/vanilla-lazyload/dist/lazyload.js'
-      ],
+      src: './assets/js/src',
       minified: [
         
       ],

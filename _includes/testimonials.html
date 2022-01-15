@@ -1,28 +1,25 @@
-{% if site.data.testimonials %}
-<section id="js-scroll-to-testimonials" class="section section-testimonial u-content-space bg-light">
-    <div class="container">
-        <header class="text-center w-md-50 mx-auto mb-8">
-            <h2 class="h1">Testimonials</h2>
-            <p class="h5">Do not take my words, check out what people say about me!</p>
-        </header>
-        <div class="row">
-            {% if site.data.testimonials %}
-            {% for testimonial in site.data.testimonials %}
-                <div class="col-lg-6 mb-7 mb-lg-7 px-lg-5">
-                    <blockquote class="u-blockquote-v2 rounded mb-5">{{ testimonial.review }}</blockquote>
-                    <div class="media u-font-size-90">
-                        <img class="d-flex align-self-center rounded-circle u-blockquote-v2__image u-box-shadow-lg mx-3 mt-2 lazyload" src="{{ '/assets/images/upwork.png' }}" alt="{{ testimonial.name }}">
-                        <div class="media-body align-self-center">
-                            <strong class="d-block">{{ testimonial.name }}</strong>
-                            {% if testimonial.location %}
-                            <span class="u-font-size-75 text-dark">{{ testimonial.location }}</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-            {% endif %}
-        </div>
+<section id="js-scroll-to-testimonials" class="flex w-full min-h-screen scroll-mt-24">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="filter-container relative grid grid-cols-2 place-content-between items-center py-10">
+      <h2 class="section-title text-4xl">Testimonials</h2>
     </div>
-</section>
-{% endif %}
+    {% if site.data.testimonials %}
+    <div class="testimonials grid grid-cols-2 gap-14 gap-y-14">
+      {% for testimonial in site.data.testimonials %}
+        <div class="testimonial w-100">
+          <blocquote class="rounded-2xl p-8 bg-gray-100 text-gray-900 rounded-br-none block text-2xl mb-6">
+            {{ testimonial.review }}
+          </blocquote>
+          <div class="flex items-center content-end text-right flex-row-reverse">
+            <img class="w-10 h-10 rounded-full ml-4" src="{{ '/assets/images/' | relative_url }}{{ testimonial.image }}" alt="{{ testimonial.name }}" />
+            <div class="text-sm">
+              <p class="font-medium">{{ testimonial.name }}</p>
+              <p class="text-xs">{{ testimonial.location }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section> <!-- About Section -->

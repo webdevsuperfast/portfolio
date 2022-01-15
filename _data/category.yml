@@ -1,0 +1,14 @@
+- name: PSD to WordPress
+  slug: wordpress
+
+- name: Web Design
+  slug: design
+
+- name: VueJS
+  slug: vue
+
+- name: WordPress Plugin
+  slug: plugin
+
+- name: PSD to HTML
+  slug: html

@@ -1,17 +1,8 @@
-- title: 'About'
-  href: '#js-scroll-to-about'
-
-- title: 'Experience'
-  href: '#js-scroll-to-experience'
-
-- title: 'Skills'
-  href: '#js-scroll-to-skills'
-
 - title: 'Portfolio'
-  href: '#js-scroll-to-portfolio'
+  href: 'js-scroll-to-portfolio'
 
 - title: 'Testimonials'
-  href: '#js-scroll-to-testimonials'
+  href: 'js-scroll-to-testimonials'
 
 - title: 'Resume'
-  href: '/assets/documents/acob_rotsen-resume.pdf'
+  href: 'https://standardresume.co/r/YRlivh8oXpoft8SgKK2y9'

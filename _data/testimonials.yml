@@ -2,18 +2,22 @@
   location: Los Altos, United States
   review: Nice job, knew just what to do. Thanks!
   score: 5.0
+  image: 'upwork.png'
 
 - name: Upwork Client
   location: 
   review: Another great job. He's my go-to guy!
   score: 5.0
+  image: 'upwork.png'
 
 - name: Ron
   location: St. Peters, United States
   review: Look forward to working with him again in very near future
   score: 5.0
+  image: 'upwork.png'
 
 - name: Jane Oliveira
-  location: Pensacola,  United States
+  location: Pensacola, United States
   review: Highly skilled and professional developer. I will hire him again. 
   score: 5.0
+  image: 'upwork.png'

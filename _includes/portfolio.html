@@ -1,50 +1,49 @@
-<section id="js-scroll-to-portfolio" class="u-content-space">
-    <div class="container">
-        <header class="text-center w-md-50 mx-auto mb-8">
-            <h2 class="h1">My Portfolio</h2>
-            <p class="h5">Checkout below the themes and sites that I developed and plugins I created.</p>
-        </header>
-        <ul class="u-portfolio-controls text-center mb-5">
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter="all">All</a></li>
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".wordpress">PSD to WordPress</a></li>
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".html">PSD to HTML</a></li>
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".woocommerce">PSD to WooCommerce</a></li>
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".design">Web Design</a></li>
-            <li class="u-portfolio-controls__item"><a class="filter" data-filter=".plugin">WordPress Plugins</a></li>
-        </ul>
-        <div class="collections gallery u-portfolio row no-gutters mb-6">
-            {% for portfolio in site.data.portfolio %}
-            {%- assign categories = portfolio.category -%}
-            {% capture cat %}
-                {% for category in categories %}
-                    {%- if forloop.first == true -%}
-                        {%- if forloop.length > 1 -%}
-                            {{- category | capitalize | append: ', ' -}}
-                        {%- else -%}
-                            {{- category | capitalize -}}
-                        {%- endif -%}
+<section id="js-scroll-to-portfolio" class="flex w-full scroll-mt-24 min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
+    <div class="filter-container relative grid grid-cols-2 place-content-between items-center py-10">
+      <h2 class="section-title text-4xl">Portfolio</h2>
+      <div class="filter-block">
+        <div class="w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto flex items-center space-x-6 uppercase" x-show="open" x-transition>
+          <a data-filter="all" class="filter uppercase hover:text-rose-900 transition-colors">All</a>
+          {% assign filter_category = site.data.category | sort: "slug" %}
+          {% for category in filter_category %}
+            <a class="filter uppercase hover:text-rose-900 transition-colors" data-filter=".{{ category.slug }}" class="filter">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="collections grid grid-cols-6 gap-8 snap-proximity overflow-x-auto relative overflow-y-hidden">
+      {% for portfolio in site.data.portfolio %}
+      {%- assign categories = portfolio.category -%}
+        {% capture cat %}
+            {% for category in categories %}
+                {%- if forloop.first == true -%}
+                    {%- if forloop.length > 1 -%}
+                        {{- category | capitalize | append: ', ' -}}
                     {%- else -%}
                         {{- category | capitalize -}}
                     {%- endif -%}
-                {% endfor %}
-            {% endcapture %}
-            {% assign groups = portfolio.category | split: ' ' | size %}
-            {%- capture group -%}
-                {%- if groups > 1 -%}
-                    {{ portfolio.category | jsonify }}
                 {%- else -%}
-                    [{{ portfolio.category | jsonify }}]
+                    {{- category | capitalize -}}
                 {%- endif -%}
-            {%- endcapture -%}
-            <figure class="mix col-sm-6 col-md-4 u-portfolio__item {{ portfolio.category | join: ' ' }}">
-                <img class="u-portfolio__image lazyload" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.thumbnail }}" alt="{{ portfolio.title }}">
-                <figcaption class="u-portfolio__info">
-                    <h6 class="mb-0">{{ portfolio.title }}</h6>
-                    <small class="d-block">{{ cat }}</small>
-                </figcaption>
-                <a class="u-portfolio__zoom" href="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" title="{{ portfolio.title }}" data-url="{{ portfolio.website }}">Zoom</a>
-            </figure>
             {% endfor %}
-        </div>
+        {% endcapture %}
+        {% assign groups = portfolio.category | split: ' ' | size %}
+        {%- capture group -%}
+            {%- if groups > 1 -%}
+                {{ portfolio.category | jsonify }}
+            {%- else -%}
+                [{{ portfolio.category | jsonify }}]
+            {%- endif -%}
+        {%- endcapture -%}
+        <figure class="mix portfolio w-100 {{ portfolio.category | join: ' ' }}">
+          <img class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px]" src="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" alt="{{ portfolio.title }}" />
+          <figcaption class="portfolio-info">
+            <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
+            <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->
+          </figcaption>
+        </figure>
+      {% endfor %}
     </div>
-</section>
+  </div>
+</section> <!-- About Section -->

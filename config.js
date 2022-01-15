@@ -5,11 +5,11 @@ module.exports = {
   },
   paths: {
     styles: {
-      src: './assets/scss',
+      src: './_assets/scss',
       dest: './assets/css'
     },
     scripts: {
-      src: './assets/js/src',
+      src: './_assets/js',
       minified: [
         
       ],
@@ -25,12 +25,6 @@ module.exports = {
       thumbnail: [
         './develop/images/thumbs/*'
       ]
-    },
-    sources: {
-      src: [
-        
-      ],
-      dest: './assets/scss/sources/'
     }
   }
 }

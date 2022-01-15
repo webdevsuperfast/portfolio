@@ -103,9 +103,15 @@ function watchFiles() {
 }
 
 exports.default = parallel(
-  series(style, criticalCss),
+  series(style),
   js,
   jekyllBuild,
-  browserSyncServe,
-  watchFiles
+  process.env.NODE_ENV === 'production' ? '' : browserSyncServe,
+  process.env.NODE_ENV === 'production' ? '' : watchFiles
+);
+
+exports.live = parallel(
+  series(style),
+  js,
+  jekyllBuild
 );

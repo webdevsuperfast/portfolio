@@ -103,7 +103,6 @@ exports.default = parallel(
 );
 
 exports.live = parallel(
-  series(style),
-  js,
+  series(style, js),
   jekyllBuild
 );

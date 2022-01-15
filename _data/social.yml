@@ -1,3 +1,8 @@
+- name: Email
+  url: mailto:&#104;&#101;&#108;&#108;&#111;&#064;&#114;&#111;&#116;&#115;&#101;&#110;&#097;&#099;&#111;&#098;&#046;&#099;&#111;&#109;
+  title: Contact me
+  icon: mail
+
 - name: GitHub
   url: https://github.com/webdevsuperfast
   title: Follow me on GitHub

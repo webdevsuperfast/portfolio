@@ -3,13 +3,19 @@
   <footer class="pb-4 lg:pb-24 w-screen fixed bottom-0">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative" x-data="{ open: false }" @click.away="open = false">
-        <button class="p-5 bg-rose-900 rounded-2xl rounded-br-none absolute right-0 bottom-0 hover:bg-rose-700" x-on:click="open = ! open">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="10" y1="1" x2="10" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <line x1="19" y1="10" x2="1" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          </svg>            
+        <button class="p-5 bg-rose-900 rounded-2xl rounded-br-none absolute right-0 bottom-0 hover:bg-rose-700 active:bg-rose-700 focus:bg-rose-700" x-on:click="open = ! open">
+          <div class="w-5 h-5 flex items-center justify-center relative">
+            <span
+              x-bind:class="open ? 'rotate-45' : ''"
+              class="transform transition w-full h-0.5 absolute rounded bg-white"
+            ></span>
+            <span
+              x-bind:class="open ? 'rotate-45' : ''"
+              class="transform transition h-full absolute w-0.5 rounded bg-white"
+              ></span>
+          </div>
         </button>
-        <div class="absolute right-0 bottom-20 rounded-2xl bg-rose-900 overflow-hidden rounded-br-none" x-show="open" x-transition>
+        <div class="absolute right-0 bottom-20 rounded-2xl bg-rose-900 overflow-hidden" x-show="open" x-transition>
           {% if site.data.social %}
             <div class="">
               {% for social in site.data.social %}
@@ -30,38 +36,7 @@
 {% if site.data.analytics %}
   {% include "_includes/analytics.html" %}
 {% endif %}
-<script>
-  // Set the options to make LazyLoad self-initialize	
-  window.lazyLoadOptions = {	
-    elements_selector: ".lazyload"	
-  };
-  // Listen to the initialization event and get the instance of LazyLoad	
-  window.addEventListener('LazyLoad::Initialized', function (event) {	
-    window.lazyLoadInstance = event.detail.instance;	
-  }, false);
 
-  let scrollpos = window.scrollY
-  const header = document.querySelector("header")
-  const header_height = header.offsetHeight
-
-  // const add_class_on_scroll = () => header.classList.add("bg-rose-900 opacity-75")
-  // const remove_class_on_scroll = () => header.classList.remove("bg-rose-900 opacity-75")
-
-  window.addEventListener('scroll', function() { 
-    scrollpos = window.scrollY;
-
-    if (scrollpos >= header_height) { 
-      console.log("scrolled");
-      header.classList.add("bg-gray-900", "bg-opacity-75", "py-4");
-      header.classList.remove("pt-24")
-    } else { 
-      // console.log("not scrolled");
-      header.classList.remove("bg-gray-900", "bg-opacity-75", "py-4");
-      header.classList.add("pt-24")
-    }
-
-  });
-</script>
 <script src="{{ '/assets/js/lazyload.js' | relative_url }}" defer></script>
 </body>
 </html>

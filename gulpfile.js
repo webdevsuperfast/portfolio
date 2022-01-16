@@ -102,7 +102,7 @@ exports.default = parallel(
   process.env.NODE_ENV === 'production' ? '' : watchFiles
 );
 
-exports.live = parallel(
+exports.build = parallel(
   series(style, js),
   jekyllBuild
 );

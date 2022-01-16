@@ -95,7 +95,7 @@ function watchFiles() {
 }
 
 exports.default = parallel(
-  series(style),
+  series(style, criticalCss),
   js,
   jekyllBuild,
   process.env.NODE_ENV === 'production' ? '' : browserSyncServe,

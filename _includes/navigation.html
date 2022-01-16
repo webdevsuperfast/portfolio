@@ -2,6 +2,7 @@
   x-data="{ scrolled: false, navOpen: false }"
   :class="{ 'bg-gray-900 bg-opacity-75 py-4 lg:pt-4' : scrolled }"
   @scroll.window="scrolled = (window.pageYOffset > 20) ? true : false"
+  @click.away="navOpen = false"
 >
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center flex-nowrap">
@@ -43,11 +44,14 @@
     </div>
     <div x-show="navOpen" x-transition class="w-screen uppercase absolute right-0 bg-rose-900 py-3 rounded-3xl top-24 text-center">
       {%- for nav in site.data.navigation -%}
+        <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 transition-colors  py-3 px-5" 
         {% if forloop.last %}
-          <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 py-3 px-5 transition-colors" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
+          href="{{ nav.href }}"
+          target="_blank"
         {% else %}
-          <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 transition-colors  py-3 px-5" href="#{{ nav.href }}">{{ nav.title }}</a>
+          href="#{{ nav.href }}"
         {% endif %}
+        >{{ nav.title }}</a>
       {%- endfor -%}
     </div>
   </nav>

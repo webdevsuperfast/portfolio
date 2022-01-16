@@ -42,7 +42,8 @@
   "homepage": "https://github.com/webdevsuperfast/webdevsuperfast.github.io#readme",
   "scripts": {
     "preinstall": "bundle install",
-    "start": "bundle exec gulp",
+    "develop": "bundle exec gulp",
+    "build": "bundle exec gulp build",
     "test": "bundle exec gulp test"
   },
   "browserslist": [

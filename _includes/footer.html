@@ -39,5 +39,14 @@
 
 <script src="{{ '/assets/js/lazyload.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/glightbox.js' | relative_url }}" defer></script>
+
+<script>
+  const myComponent = window.myComponent = () => ({
+    value: 'all',
+    clicked(e) {
+      this.value = e.target.dataset.filter;
+    }
+  })
+</script>
 </body>
 </html>

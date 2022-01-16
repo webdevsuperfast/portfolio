@@ -32,11 +32,17 @@
             {% endfor %}
           </div>
         </div>
-        <div x-transition class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto xl:flex items-center space-x-6 uppercase">
-          <a data-filter="all" class="filter uppercase hover:text-rose-900 transition-colors">All</a>
+        <div x-transition class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto xl:flex items-center space-x-6 uppercase" x-data="myComponent()">
+          <a
+            @click.prevent="clicked($event)" 
+            x-bind:class="value === 'all' ? 'text-rose-900 underline underline-offset-4' : ''"
+            data-filter="all" class="filter uppercase hover:text-rose-900 hover:cursor-pointer transition-colors">All</a>
           {% assign filter_category = site.data.category | sort: "name" %}
           {% for category in filter_category %}
-            <a class="filter uppercase hover:text-rose-900 transition-colors" data-filter=".{{ category.slug }}" class="filter">{{ category.name }}</a>
+            <a
+              @click.prevent="clicked($event)"
+              x-bind:class="value === '.{{ category.slug }}' ? 'text-rose-900 underline underline-offset-4' : ''"
+              class="filter uppercase hover:text-rose-900 transition-colors hover:cursor-pointer" data-filter=".{{ category.slug }}" >{{ category.name }}</a>
           {% endfor %}
         </div>
       </div>

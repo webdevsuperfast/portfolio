@@ -32,12 +32,15 @@
           </div>
         </button>
       </div>
-      <div class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto sm:flex items-center space-x-6 uppercase">
+      <div class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto sm:flex items-center space-x-6 uppercase" x-data="myComponent2()">
         {%- for nav in site.data.navigation -%}
           {% if forloop.last %}
             <a class="block sm:inline-block uppercase text-md lg:text-2xl hover:bg-transparent hover:text-gray-200 hover:shadow-sm hover:shadow-rose-900 transition-colors border-2 border-rose-900 bg-rose-900 px-3 py-1 lg:px-10 lg:py-3 rounded-lg" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
           {% else %}
-            <a class="uppercase text-md lg:text-2xl hover:text-rose-900 transition-colors" href="#{{ nav.href }}">{{ nav.title }}</a>
+            <a
+              @click="clicked"
+              x-bind:class="value === '#{{ nav.href }}' ? 'text-rose-900': 'oops'"
+              class="uppercase text-md lg:text-2xl hover:text-rose-900 transition-colors" href="#{{ nav.href }}">{{ nav.title }}</a>
           {% endif %}
         {%- endfor -%}
       </div>

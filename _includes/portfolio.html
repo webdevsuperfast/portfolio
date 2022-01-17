@@ -74,7 +74,7 @@
         {%- endcapture -%}
         <figure class="mix portfolio w-100 {{ portfolio.category | join: ' ' }}">
           <a data-glightbox="type: image" href="{{ '/assets/images/' | relative_url }}{{ portfolio.image }}" class="glightbox">
-            <img class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}" alt="{{ portfolio.title }}" />
+            <img width="445" height="334" class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}" alt="{{ portfolio.title }}" />
             <figcaption class="portfolio-info">
               <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
               <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->

@@ -52,9 +52,6 @@
   ],
   "dependencies": {
     "alpinejs": "^3.8.0",
-    "glightbox": "^3.1.0",
-    "gulp-imagemin": "^8.0.0",
-    "imagemin-webp": "^7.0.0",
-    "node-fetch": "2.6.1"
+    "glightbox": "^3.1.0"
   }
 }

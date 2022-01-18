@@ -6,7 +6,6 @@ const options = require('./config.js'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   concat = require('gulp-concat'),
-  notify = require('gulp-notify'),
   foreach = require('gulp-flatmap'),
   browserSync = require('browser-sync').create(),
   cp = require('child_process'),
@@ -64,6 +63,20 @@ function js() {
     .pipe(dest(options.paths.scripts.dest));
 }
 
+function images() {
+  const featured = src(options.paths.images.featured)
+    .pipe(changed(`${options.paths.images.dest}/featured`))
+    .pipe(webp())
+    .pipe(dest(`${options.paths.images.dest}/featured`));
+  
+  const thumbnail = src(options.paths.images.thumbnail)
+    .pipe(changed(`${options.paths.images.dest}/thumbs`))
+    .pipe(webp())
+    .pipe(dest(`${options.paths.images.dest}/thumbs`));
+  
+  return merge(featured, thumbnail);
+}
+
 function browserSyncServe() {
   browserSync.init({
     server: {
@@ -80,8 +93,9 @@ function browserSyncReload(done) {
 
 function watchFiles() {
   watch(`${options.paths.styles.src}/**/*.scss`, series(style, browserSyncReload));
-  watch(`${options.paths.scripts.src}`, series(js, browserSyncReload));
+  watch([`${options.paths.scripts.src}`, './gulpfile.js'], series(js, browserSyncReload));
   watch([options.config.tailwind, `${options.paths.styles.src}/**/*.scss`], series(style, browserSyncReload));
+  watch(options.paths.images.featured, series(images, browserSyncReload));
   watch(
   [
     '*.html', 
@@ -97,6 +111,7 @@ function watchFiles() {
 exports.default = parallel(
   series(style, criticalCss),
   js,
+  images,
   jekyllBuild,
   process.env.NODE_ENV === 'production' ? '' : browserSyncServe,
   process.env.NODE_ENV === 'production' ? '' : watchFiles

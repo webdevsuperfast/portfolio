@@ -3,7 +3,7 @@
   <footer class="pb-4 lg:pb-24 w-screen fixed bottom-0">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative" x-data="{ open: false }" @click.away="open = false">
-        <button class="p-5 bg-rose-900 rounded-2xl rounded-br-none absolute right-0 bottom-0 hover:bg-rose-700 active:bg-rose-700 focus:bg-rose-700" x-on:click="open = ! open">
+        <button class="p-5 bg-rose-900 rounded-xl rounded-br-none absolute right-0 bottom-0 hover:bg-rose-700 active:bg-rose-700 focus:bg-rose-700" x-on:click="open = ! open">
           <div class="w-5 h-5 flex items-center justify-center relative">
             <span
               x-bind:class="open ? 'rotate-45' : ''"
@@ -15,7 +15,12 @@
               ></span>
           </div>
         </button>
-        <div class="absolute right-0 bottom-20 rounded-2xl bg-rose-900 overflow-hidden" x-show="open" x-transition>
+        <div
+          :class="{ 'block': open, 'hidden': ! open }" 
+          class="absolute right-0 bottom-20 rounded-xl bg-rose-900 overflow-hidden" 
+          x-show="open" 
+          x-transition
+        >
           {% if site.data.social %}
             <div class="">
               {% for social in site.data.social %}

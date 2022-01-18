@@ -6,6 +6,7 @@
         <div x-transition class="w-full items-center flex-none lg:mt-0 lg:w-auto sm:ml-auto flex space-x-8" x-data="myComponent()">
           <div 
             x-show="filterOpen"
+            :class="{ 'block': filterOpen, 'hidden': ! filterOpen }"
             class="flex absolute right-0 top-[100px] filter-container z-10 rounded-xl flex-col bg-gray-900 lg:rounded-none lg:static lg:bg-transparent lg:bg-opacity-0 lg:flex-row lg:space-x-6 uppercase lg:text-xl"
           >
             <a
@@ -23,20 +24,20 @@
           <button
             x-on:click="filterOpen = ! filterOpen"
             class="flex items-center space-x-2 focus:outline-none">
-            <span class="font-medium text-lg" x-text="filterOpen ? '' : 'Filter'">Filter</span>
+            <span class="text-xl uppercase" x-text="filterOpen ? '' : 'Filter'">Filter</span>
             
             <div class="w-10 h-10 flex items-center justify-center relative">
               <span 
               x-bind:class="filterOpen ? '-translate-y-0 rotate-45' : '-translate-y-3'"
-              class="transform transition w-full rounded h-px bg-current absolute"
+              class="transform transition w-full rounded h-0.5 bg-current absolute"
               ></span>
               <span 
               x-bind:class="filterOpen ? 'opacity-0 translate-x-3 w-10' : 'opacity-100'"
-              class="transform transition w-3/5 rounded h-px bg-current absolute"
+              class="transform transition w-3/5 rounded h-0.5 bg-current absolute"
               ></span>
               <span 
               x-bind:class="filterOpen ? 'translate-y-0 -rotate-45 w-10' : 'translate-y-3 w-1/5'"
-              class="transform transition rounded h-px bg-current absolute"
+              class="transform transition rounded h-0.5 bg-current absolute"
               ></span>
             </div>
           </button>
@@ -71,7 +72,7 @@
         {%- endcapture -%}
         <figure class="mix portfolio w-100 {{ portfolio.category | join: ' ' }}">
           <a data-glightbox="type: image" href="{{ '/assets/images/featured/' | relative_url }}{{ portfolio.image }}.webp" class="glightbox">
-            <img width="445" height="334" class="portfolio-image rounded-3xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}.webp" alt="{{ portfolio.title }}" />
+            <img width="445" height="334" class="portfolio-image rounded-xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}.webp" alt="{{ portfolio.title }}" />
             <figcaption class="portfolio-info">
               <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
               <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->

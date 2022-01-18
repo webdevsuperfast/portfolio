@@ -23,6 +23,10 @@ module.exports = {
       thumbnail: [
         './_assets/images/thumbs/*'
       ],
+      other: [
+        './_assets/images/background.jpg',
+        './_assets/images/upwork.png'
+      ],
       dest: './assets/images'
     }
   }

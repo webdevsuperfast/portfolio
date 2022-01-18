@@ -76,6 +76,13 @@ function images() {
         quality: 75
       }))
     .pipe(dest(`${options.paths.images.dest}/thumbs`));
+
+  const other = src(options.paths.images.other)
+    .pipe(changed(`${options.paths.images.dest}`))
+    .pipe(webp({
+        quality: 75
+      }))
+    .pipe(dest(`${options.paths.images.dest}`));
   
   return merge(featured, thumbnail);
 }

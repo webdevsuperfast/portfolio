@@ -6,7 +6,6 @@ const options = require('./config.js'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   concat = require('gulp-concat'),
-  foreach = require('gulp-flatmap'),
   browserSync = require('browser-sync').create(),
   cp = require('child_process'),
   changed = require('gulp-changed'),
@@ -66,12 +65,16 @@ function js() {
 function images() {
   const featured = src(options.paths.images.featured)
     .pipe(changed(`${options.paths.images.dest}/featured`))
-    .pipe(webp())
+    .pipe(webp({
+        quality: 75,
+      }))
     .pipe(dest(`${options.paths.images.dest}/featured`));
   
   const thumbnail = src(options.paths.images.thumbnail)
     .pipe(changed(`${options.paths.images.dest}/thumbs`))
-    .pipe(webp())
+    .pipe(webp({
+        quality: 75
+      }))
     .pipe(dest(`${options.paths.images.dest}/thumbs`));
   
   return merge(featured, thumbnail);
@@ -113,8 +116,8 @@ exports.default = parallel(
   js,
   images,
   jekyllBuild,
-  process.env.NODE_ENV === 'production' ? '' : browserSyncServe,
-  process.env.NODE_ENV === 'production' ? '' : watchFiles
+  browserSyncServe,
+  watchFiles
 );
 
 exports.build = parallel(

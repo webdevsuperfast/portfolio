@@ -6,11 +6,11 @@
 >
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center flex-nowrap">
-      <a class="flex-none text-white grow" href="/">
+      <a class="flex-none text-white" href="/">
         <svg width="50" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M44.444 16.667A5.556 5.556 0 0 0 50 11.11V5.556A5.556 5.556 0 0 0 44.444 0H0V44.444A5.556 5.556 0 0 0 5.556 50h5.555a5.556 5.556 0 0 0 5.556-5.556V22.222a5.556 5.556 0 0 1 5.555-5.555h22.222ZM50 38.889a5.556 5.556 0 0 0-5.556-5.556H38.89a5.556 5.556 0 0 0-5.556 5.556v5.555A5.556 5.556 0 0 0 38.89 50H50V38.889Z" fill="#fff"/></svg>
       </a>
       <div 
-        class="justify-end sm:mt-0 sm:w-auto sm:ml-auto flex transform transition-all duration-300 origin-bottom lg:origin-right" 
+        class="grow justify-end sm:mt-0 sm:w-auto sm:ml-auto flex transform transition-all duration-300 origin-bottom lg:origin-right" 
         x-data="myComponent2()"
       >
         <div
@@ -20,7 +20,7 @@
           x-transition:leave-start="opacity-100 lg:scale-100" 
           x-transition:leave-end="opacity-0 lg:scale-75"
           :class="{ 'block' : navOpen, 'hidden' : !navOpen }"
-          class="navigation flex flex-col fixed text-center top-8 sm:space-x-6 uppercase bg-gray-900 bg-opacity-75 rounded-2xl sm:bg-none sm:bg-opacity-0 sm:static sm:flex-row w-100">
+          class="navigation flex flex-col fixed text-center top-8 sm:space-x-6 uppercase bg-gray-900 bg-opacity-75 rounded-xl sm:bg-none sm:bg-opacity-0 sm:static sm:flex-row w-100">
           {%- for nav in site.data.navigation -%}
             <a
               @click="clicked"
@@ -35,7 +35,7 @@
           <span x-text="navOpen ? '' : 'Menu'"
                 class="text-2xl">Open</span>
           
-          <div class="w-10 flex items-center justify-center relative">
+          <div class="w-10 h-10 flex items-center justify-center relative">
             <span 
               x-bind:class="navOpen ? 'translate-y-0 rotate-45' : '-translate-y-3'" 
               class="transform transition w-full rounded h-1 bg-current absolute"

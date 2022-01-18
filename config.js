@@ -16,15 +16,14 @@ module.exports = {
       dest: './assets/js'
     },
     images: {
-      feature: [
-        './develop/images/*.{jpg,png}',
-        '!./develop/images/school-for-selling.jpg',
-        '!./develop/images/*.svg',
-        '!./develop/images/thumbs/*.{jpg,png}'
+      featured: [
+        './_assets/images/featured/*.{jpg,png}',
+        '!./_assets/images/featured/school-for-selling.jpg'
       ],
       thumbnail: [
-        './develop/images/thumbs/*'
-      ]
+        './_assets/images/thumbs/*'
+      ],
+      dest: './assets/images'
     }
   }
 }

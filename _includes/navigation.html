@@ -9,11 +9,29 @@
       <a class="flex-none text-white grow" href="/">
         <svg width="50" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M44.444 16.667A5.556 5.556 0 0 0 50 11.11V5.556A5.556 5.556 0 0 0 44.444 0H0V44.444A5.556 5.556 0 0 0 5.556 50h5.555a5.556 5.556 0 0 0 5.556-5.556V22.222a5.556 5.556 0 0 1 5.555-5.555h22.222ZM50 38.889a5.556 5.556 0 0 0-5.556-5.556H38.89a5.556 5.556 0 0 0-5.556 5.556v5.555A5.556 5.556 0 0 0 38.89 50H50V38.889Z" fill="#fff"/></svg>
       </a>
-      <div class="block sm:hidden mobile-menu relative">
+      <div 
+        class="justify-end sm:mt-0 sm:w-auto sm:ml-auto flex transform transition-all duration-300 origin-bottom lg:origin-right" 
+        x-data="myComponent2()"
+      >
+        <div
+          x-show="navOpen" 
+          x-transition:enter-start="opacity-0 lg:scale-75" 
+          x-transition:enter-end="opacity-100 lg:scale-100" 
+          x-transition:leave-start="opacity-100 lg:scale-100" 
+          x-transition:leave-end="opacity-0 lg:scale-75"
+          class="navigation flex flex-col fixed text-center top-8 sm:space-x-6 uppercase bg-gray-900 bg-opacity-75 rounded-2xl sm:bg-none sm:bg-opacity-0 sm:static sm:flex-row w-100">
+          {%- for nav in site.data.navigation -%}
+            <a
+              @click="clicked"
+              x-bind:class="value === '#{{ nav.href }}' ? 'text-rose-900': ''"
+              class="uppercase block px-6 py-3 sm:px-0 sm:py-0 text-md text-2xl hover:text-rose-900 transition-colors" 
+              href="#{{ nav.href }}">{{ nav.title }}</a>
+          {%- endfor -%}
+        </div>
         <button
           x-on:click="navOpen = ! navOpen"
-          class="flex items-center space-x-2 focus:outline-none block sm:hidden">
-          <span x-text="navOpen ? 'Close' : 'Menu'"
+          class="flex items-center space-x-4 focus:outline-none ml-4">
+          <span x-text="navOpen ? '' : 'Menu'"
                 class="font-medium text-lg">Open</span>
           
           <div class="w-10 flex items-center justify-center relative">
@@ -32,30 +50,6 @@
           </div>
         </button>
       </div>
-      <div class="hidden w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:ml-auto sm:flex items-center space-x-6 uppercase" x-data="myComponent2()">
-        {%- for nav in site.data.navigation -%}
-          {% if forloop.last %}
-            <a class="block sm:inline-block uppercase text-md lg:text-2xl hover:bg-transparent hover:text-gray-200 hover:shadow-sm hover:shadow-rose-900 transition-colors border-2 border-rose-900 bg-rose-900 px-3 py-1 lg:px-10 lg:py-3 rounded-lg" href="{{ nav.href }}" target="_blank">{{ nav.title }}</a>
-          {% else %}
-            <a
-              @click="clicked"
-              x-bind:class="value === '#{{ nav.href }}' ? 'text-rose-900': 'oops'"
-              class="uppercase text-md lg:text-2xl hover:text-rose-900 transition-colors" href="#{{ nav.href }}">{{ nav.title }}</a>
-          {% endif %}
-        {%- endfor -%}
-      </div>
-    </div>
-    <div x-show="navOpen" x-transition class="w-screen uppercase absolute right-0 bg-rose-900 py-3 rounded-3xl top-24 text-center">
-      {%- for nav in site.data.navigation -%}
-        <a class="block uppercase text-md hover:bg-rose-700 hover:text-gray-200 transition-colors  py-3 px-5" 
-        {% if forloop.last %}
-          href="{{ nav.href }}"
-          target="_blank"
-        {% else %}
-          href="#{{ nav.href }}"
-        {% endif %}
-        >{{ nav.title }}</a>
-      {%- endfor -%}
     </div>
   </nav>
 </header><!-- End Header -->

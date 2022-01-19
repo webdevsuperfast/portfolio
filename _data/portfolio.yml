@@ -26,38 +26,12 @@
   thumbnail: betty-rocker
   category: wordpress
 
-- title: Genesis Boilerplate
-  client: Rotsen Acob
-  website: http://boilerplate.rotsenacob.com
-  image: genesis-boilerplate
-  thumbnail: genesis-boilerplate
-  category: 
-    - design
-    - wordpress
-
 - title: Booming Business
   client: RecommendWP
   website: https://boomingbusiness.com
   image: booming-business
   thumbnail: booming-business
   category: wordpress
-
-- title: Bootstrap for Genesis
-  client: Rotsen Acob
-  website: http://bootstrap.rotsenacob.com/
-  image: bootstrap-for-genesis
-  thumbnail: bootstrap-for-genesis
-  category: 
-    - wordpress 
-    - design
-
-- title: Business Services Website
-  client: RecommendWP
-  website:
-  image: business-services-website
-  thumbnail: business-services-website
-  category:
-    - design
 
 - title: Cleaning Marketer
   client: SuperFastBusiness
@@ -103,15 +77,6 @@
   thumbnail: deltoro-loan-servicing
   category: wordpress
 
-- title: Everglade
-  client: SuperFastBusiness
-  website: 
-  image: everglade
-  thumbnail: everglade
-  category: 
-  - wordpress
-  - design
-
 - title: Expert Authority
   client: SuperFastBusiness
   image: expert-authority
@@ -149,16 +114,7 @@
   image: mydevhouse
   thumbnail: mydevhouse
   category:
-    - wordpress
-    - design
-
-- title: Persona
-  client: SuperFastBusiness
-  website: 
-  image: persona
-  thumbnail: persona
-  category: 
-    - wordpress
+    - vuejs
     - design
 
 - title: RA Widgets Animate
@@ -193,15 +149,6 @@
     - wordpress
     - design
 
-- title: Tradie Theme
-  client: SuperFastBusiness
-  website: 
-  image: tradie-theme
-  thumbnail: tradie-theme
-  category: 
-    - wordpress
-    - design
-
 - title: Travel Hacker
   client: RecommendWP
   website: http://thetravelhacker.com/
@@ -209,20 +156,56 @@
   thumbnail: travel-hacker
   category: wordpress
 
-- title: View Website Examples
-  client: SuperFastBusiness
-  website: 
-  image: viewwebsiteexamples
-  thumbnail: viewwebsiteexamples
-  category: 
-    - wordpress
-    - design
+- title: Service Squad
+  client: 
+  website: https://servicesquad.com
+  image: service-squad
+  category: wordpress
 
-- title: Weisman Pro
-  client: SuperFastBusiness
+- title: Simply Gutters
+  client: 
+  website: https://simplygutterstn.com
+  image: simply-gutters
+  category: wordpress
+
+- title: St John Marina
+  client: 
   website: 
-  image: weisman-pro
-  thumbnail: weisman-pro
-  category: 
-    - wordpress
-    - design
+  image: st-john-marina
+  category: wordpress
+
+- title: Terra Garden Solutions
+  client: 
+  website:
+  image: terra-garden-solutions
+  category: wordpress
+
+- title: Liz Noey
+  client:
+  website:
+  image: liz-noey
+  category: wordpress
+
+- title: Complete Signs
+  client:
+  website: 
+  image: complete-signs
+  category: wordpress
+
+- title: HD Strata
+  client:
+  website:
+  image: hd-strata
+  category: wordpress
+
+- title: Open Directory
+  client:
+  website: https://opendirectory.rotsenacob.com
+  image: open-directory
+  category: vuejs
+
+- title: Rotsen Acob
+  client:
+  website: https://rotsenacob.com
+  image: rotsen-acob
+  category: design

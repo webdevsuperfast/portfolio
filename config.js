@@ -17,15 +17,15 @@ module.exports = {
     },
     images: {
       featured: [
-        './_assets/images/featured/*.{jpg,png}',
-        '!./_assets/images/featured/school-for-selling.jpg'
+        './_assets/images/featured/*.{jpg,png,jpeg}'
       ],
       thumbnail: [
         './_assets/images/thumbs/*'
       ],
       other: [
         './_assets/images/background.jpg',
-        './_assets/images/upwork.png'
+        './_assets/images/upwork.png',
+        './_assets/images/wordpress.png'
       ],
       dest: './assets/images'
     }

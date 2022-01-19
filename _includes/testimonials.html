@@ -3,15 +3,17 @@
     <div class="filter-container relative grid grid-cols-2 place-content-between items-center py-10">
       <h2 class="section-title text-4xl sm:text-6xl">Testimonials</h2>
     </div>
+    
     {% if site.data.testimonials %}
-    <div class="testimonials grid grid-cols-none sm:grid-cols-2 gap-14 gap-y-14">
-      {% for testimonial in site.data.testimonials %}
-        <div class="testimonial w-100">
-          <blocquote class="rounded-2xl p-8 bg-gray-100 text-gray-900 rounded-br-none block text-xl mb-6">
+    <div class="testimonials grid grid-cols-none sm:grid-cols-2 lg:grid-cols-3 gap-14 gap-y-14">
+      {% assign testimonials = site.data.testimonials | sort: "name" %}
+      {% for testimonial in testimonials %}
+        <div class="testimonial w-100 flex flex-col space-between">
+          <blockquote class="grow rounded-2xl p-8 bg-gray-100 text-gray-900 rounded-br-none block text-xl mb-6">
             {{ testimonial.review }}
-          </blocquote>
+          </blockquote>
           <div class="flex items-center content-end text-right flex-row-reverse">
-            <img width="150" height="150" class="w-10 h-10 rounded-full ml-4 lazy" data-src="{{ '/assets/images/upwork.webp' | relative_url }}" alt="{{ testimonial.name }}" />
+            <img width="150" height="150" class="w-10 h-10 rounded-full ml-4 lazy" data-src="{{ '/assets/images/' | relative_url }}{{ testimonial.platform }}.webp" alt="{{ testimonial.name }}" />
             <div class="text-sm">
               <p class="font-medium">{{ testimonial.name }}</p>
               <p class="text-xs">{{ testimonial.location }}</p>

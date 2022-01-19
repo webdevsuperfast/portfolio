@@ -11,6 +11,7 @@ const options = require('./config.js'),
   changed = require('gulp-changed'),
   critical = require('critical'),
   merge = require('merge-stream'),
+  imageResize = require('gulp-image-resize'),
   webp = require('gulp-webp'),
   rollup = require('gulp-better-rollup'),
   babel = require('rollup-plugin-babel'),
@@ -70,8 +71,14 @@ function images() {
       }))
     .pipe(dest(`${options.paths.images.dest}/featured`));
   
-  const thumbnail = src(options.paths.images.thumbnail)
+  const thumbnail = src(options.paths.images.featured)
     .pipe(changed(`${options.paths.images.dest}/thumbs`))
+    .pipe(imageResize({
+      width: 445,
+      height: 334,
+      crop: true,
+      gravity: 'North'
+    }))
     .pipe(webp({
         quality: 75
       }))
@@ -84,7 +91,7 @@ function images() {
       }))
     .pipe(dest(`${options.paths.images.dest}`));
   
-  return merge(featured, thumbnail);
+  return merge(featured, thumbnail, other);
 }
 
 function browserSyncServe() {

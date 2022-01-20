@@ -54,6 +54,5 @@
     "alpinejs": "^3.8.0",
     "glightbox": "^3.1.0",
     "gulp-image-resize": "^0.13.1"
-  },
-  "packageManager": "yarn@3.1.1"
+  }
 }

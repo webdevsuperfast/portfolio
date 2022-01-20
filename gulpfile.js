@@ -60,6 +60,9 @@ function js() {
         commonjs()
       ]},
     'umd'))
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(rename('app.min.js'))
     .pipe(dest(options.paths.scripts.dest));
 }
 

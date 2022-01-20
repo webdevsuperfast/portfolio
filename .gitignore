@@ -6,3 +6,4 @@ temp
 .DS_Store
 test.html
 .jekyll-cache
+.yarn

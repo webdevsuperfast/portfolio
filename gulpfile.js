@@ -122,7 +122,7 @@ function watchFiles() {
     '_layouts/**/*.html', 
     '_posts/*', 
     '_portfolio/*', 
-    '_includes/*',
+    '_includes/**/*.{css,html}',
     '_data/*',
   ],
   series(style, jekyllBuild, browserSyncReload));

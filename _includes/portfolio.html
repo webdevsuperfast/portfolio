@@ -72,8 +72,8 @@
             {%- endif -%}
         {%- endcapture -%}
         <figure class="mix portfolio w-100 {{ portfolio.category | join: ' ' }}">
-          <a data-glightbox="type: image" href="{{ '/assets/images/featured/' | relative_url }}{{ portfolio.image }}.webp" class="glightbox">
-            <img width="445" height="334" class="portfolio-image rounded-xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}.webp" alt="{{ portfolio.title }}" />
+          <a data-glightbox="type: image" href="{{ '/assets/images/featured/' | relative_url }}{{ portfolio.image }}.webp" class="glightbox group">
+            <img width="445" height="334" class="portfolio-image rounded-xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy transition group-hover:scale-95 group-hover:grayscale group-hover:drop-shadow-lg" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}.webp" alt="{{ portfolio.title }}" />
             <figcaption class="portfolio-info">
               <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
               <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->

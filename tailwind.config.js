@@ -10,10 +10,13 @@ module.exports = {
     extend: {
       fontFamily: {
         barlow: ['Barlow', 'sans-serif'],
-        sacramento: ['Sacramento', 'cursive']
+        barlowCondensed: ['Barlow Condensed', 'sans-serif'],
       },
       fontSize: {
         '14xl': ['14rem', {
+          lineHeight: '1'
+        }],
+        '16xl': ['16rem', {
           lineHeight: '1'
         }]
       }

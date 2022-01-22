@@ -1,4 +1,4 @@
-<header class="flex-none z-50 text-sm leading-6 font-medium text-gray-100 pt-4 lg:pt-24 fixed w-screen transition-all"
+<header class="flex-none z-50 text-sm leading-6 font-medium text-gray-100 pt-4 lg:pt-24 fixed w-full transition-all"
   x-data="{ scrolled: false, navOpen: false }"
   :class="{ 'bg-gray-900 bg-opacity-75 py-4 lg:pt-4' : scrolled }"
   @scroll.window="scrolled = (window.pageYOffset > 20) ? true : false"
@@ -32,9 +32,6 @@
         <button
           x-on:click="navOpen = ! navOpen"
           class="flex items-center space-x-4 focus:outline-none ml-4 uppercase">
-          <span x-text="navOpen ? '' : 'Menu'"
-                class="text-2xl">Open</span>
-          
           <div class="w-10 h-10 flex items-center justify-center relative">
             <span 
               x-bind:class="navOpen ? 'translate-y-0 rotate-45' : '-translate-y-3'" 

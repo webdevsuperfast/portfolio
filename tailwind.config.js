@@ -19,6 +19,9 @@ module.exports = {
         '16xl': ['16rem', {
           lineHeight: '1'
         }]
+      },
+      backgroundImage: {
+        body: 'url(../images/background.webp)',
       }
     },
   },

@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="google-site-verification" content="f1pibpLr0O-CAKHRGuwJGGCoPFcYi8AR44YzMxc0fh0" />
-  <meta name="msvalidate.01" content="F7E7125AA252E622EA9ED516931281E1" />
+  <title>{{ page.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&family=Sacramento&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"> 
@@ -14,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/app.css' | relative_url }}">
   </noscript>
-  <title>{{ page.title }}</title>
+  <script src="{{ '/assets/js/app.min.js' | relative_url }}" defer></script>
+  <meta name="google-site-verification" content="f1pibpLr0O-CAKHRGuwJGGCoPFcYi8AR44YzMxc0fh0" />
+  <meta name="msvalidate.01" content="F7E7125AA252E622EA9ED516931281E1" />
   <meta name="description" content="{{ page.description }}">
   <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | relative_url }}" type="image/x-icon">
 
@@ -27,4 +28,4 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 {% assign bg = site.page_background %}
-<body class="bg-body bg-cover bg-fixed bg-no-repeat lazy">
+<body data-bg="{{ bg | relative_url }}" class="bg-body bg-cover bg-fixed bg-no-repeat lazy">

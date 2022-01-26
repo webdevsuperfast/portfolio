@@ -20,7 +20,8 @@
           x-transition:leave-start="opacity-100 lg:scale-100" 
           x-transition:leave-end="opacity-0 lg:scale-75"
           :class="{ 'block' : navOpen, 'hidden' : !navOpen }"
-          class="hidden navigation flex flex-col fixed text-center top-8 sm:space-x-6 uppercase bg-gray-900 bg-opacity-75 rounded-xl sm:bg-none sm:bg-opacity-0 sm:static sm:flex-row w-100">
+          x-cloak
+          class="navigation flex flex-col fixed text-center top-8 sm:space-x-6 uppercase bg-gray-900 bg-opacity-75 rounded-xl sm:bg-none sm:bg-opacity-0 sm:static sm:flex-row w-100">
           {%- for nav in site.data.navigation -%}
             <a
               @click="clicked"

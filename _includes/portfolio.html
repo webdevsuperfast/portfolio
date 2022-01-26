@@ -6,8 +6,9 @@
         <div x-transition class="w-full items-center flex-none lg:mt-0 lg:w-auto sm:ml-auto flex space-x-8" x-data="myComponent()">
           <div 
             x-show="filterOpen"
+            x-cloak
             :class="{ 'block lg:flex': filterOpen, 'hidden': ! filterOpen }"
-            class="hidden absolute right-0 top-[100px] filter-container z-10 rounded-xl flex-col bg-gray-900 lg:rounded-none lg:static lg:bg-transparent lg:bg-opacity-0 lg:flex-row lg:space-x-6 uppercase lg:text-xl"
+            class="absolute right-0 top-[100px] filter-container z-10 rounded-xl flex-col bg-gray-900 lg:rounded-none lg:static lg:bg-transparent lg:bg-opacity-0 lg:flex-row lg:space-x-6 uppercase lg:text-xl"
           >
             <a
               @click.prevent="clicked($event)" 

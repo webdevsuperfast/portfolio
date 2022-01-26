@@ -6,5 +6,5 @@
 @tailwind utilities;
 
 [x-cloak] { 
-  display: none; 
+  @apply hidden; 
 }

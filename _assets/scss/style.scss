@@ -5,8 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-gray-100;
+@layer utilities {
+  html {
+    @apply text-gray-100;
+    @apply font-ibm-plex-sans;
+    @apply font-light;
+  }
 }
 
 [x-cloak] { 

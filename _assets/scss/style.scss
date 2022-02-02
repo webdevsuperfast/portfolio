@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply text-gray-100;
+}
+
 [x-cloak] { 
   @apply hidden; 
 }

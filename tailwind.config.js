@@ -9,8 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        barlow: ['Barlow', 'sans-serif'],
-        barlowCondensed: ['Barlow Condensed', 'sans-serif'],
+        ibmPlex: ['IBM Plex Sans', 'sans-serif'],
       },
       fontSize: {
         '14xl': ['14rem', {

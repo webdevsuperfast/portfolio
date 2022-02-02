@@ -1,7 +1,7 @@
 <section id="js-scroll-to-testimonials" class="flex w-full min-h-screen scroll-mt-12 py-12 sm:scroll-mt-24 sm:py-24 lg:py-0">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="filter-container relative grid grid-cols-2 place-content-between items-center py-10">
-      <h2 class="section-title text-4xl sm:text-6xl">Testimonials</h2>
+      <h2 class="section-title text-4xl sm:text-6xl font-bold">Testimonials</h2>
     </div>
     
     {% if site.data.testimonials %}
@@ -15,7 +15,7 @@
           <div class="flex items-center content-end text-right flex-row-reverse">
             <img width="150" height="150" class="w-10 h-10 rounded-full ml-4 lazy" data-src="{{ '/assets/images/' | relative_url }}{{ testimonial.platform }}.webp" alt="{{ testimonial.name }}" />
             <div class="text-sm">
-              <p class="font-medium">{{ testimonial.name }}</p>
+              <h3 class="font-normal">{{ testimonial.name }}</h3>
               <p class="text-xs">{{ testimonial.location }}</p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 <section id="js-scroll-to-portfolio" class="flex w-full scroll-mt-12 sm:scroll-mt-24 sm:min-h-screen relative">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8 relative" x-data="{ filterOpen: false }" @click.away="filterOpen = false">
     <div class="filter-container relative flex flex-nowrap place-content-between items-center py-10">
-      <h2 class="section-title text-4xl sm:text-6xl grow">Portfolio</h2>
+      <h2 class="section-title text-4xl sm:text-6xl grow font-bold">Portfolio</h2>
       <div class="filter-block">
         <div x-transition class="w-full items-center flex-none lg:mt-0 lg:w-auto sm:ml-auto flex space-x-8" x-data="myComponent()">
           <div 
@@ -76,7 +76,7 @@
           <a data-glightbox="type: image" href="{{ '/assets/images/featured/' | relative_url }}{{ portfolio.image }}.webp" class="glightbox group">
             <img width="445" height="334" class="portfolio-image rounded-xl rounded-br-none overflow-hidden mb-2 w-full object-cover h-[250px] lazy transition group-hover:scale-95 group-hover:grayscale group-hover:drop-shadow-lg" data-src="{{ '/assets/images/thumbs/' | relative_url }}{{ portfolio.image }}.webp" alt="{{ portfolio.title }}" />
             <figcaption class="portfolio-info">
-              <h6 class="mb-0 text-white">{{ portfolio.title }}</h6>
+              <h3 class="font-normal mb-0 text-white">{{ portfolio.title }}</h3>
               <!-- <p class="text-xs text-gray-200">{{ cat }}</p> -->
             </figcaption>
           </a>

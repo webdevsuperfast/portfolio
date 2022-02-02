@@ -52,7 +52,8 @@ function criticalCss() {
 }
 
 function js() {
-  return src(`${options.paths.scripts.src}/*.js`)
+  return src(`${options.paths.scripts.src}/app.js`)
+    .pipe(changed(`${options.paths.scripts.dest}`))
     .pipe(rollup({ 
       plugins: [
         babel(), 

@@ -1,5 +1,4 @@
-import Alpine from 'alpinejs';
- 
-window.Alpine = Alpine;
- 
-Alpine.start();
+import './alpine';
+import './glightbox';
+import './lazyload';
+import './mixitup';
